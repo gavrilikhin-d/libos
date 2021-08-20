@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>{{ page.title }}</title>
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/stylesheets/styles.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/stylesheets/highlighter.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ site.github.repository_url }}">OS</a></h1>
+        <p>Cross-platform OS features now in C++!</p>
+        <h3>Documentation</h3>
+        <ul>
+          <li><a href="{{ site.baseurl }}/">About</a></li>
+        </ul>
+      <p>This project is maintained by <a href="https://github.com/gavrilikhin-d">Gavrilikhin Daniil</a></p>
+      </header>
+      
+      <section>
+        {{content}}
+      </section>
+      
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>
