@@ -1,0 +1,91 @@
+API Reference
+=============
+
+The following section outlines the API of LibOS.
+
+Macros
+------
+
+There are 2 ways to write OS-specific code:
+
+.. doxygendefine:: OS_UNIX
+
+.. doxygendefine:: OS_LINUX
+
+.. doxygendefine:: OS_WINDOWS
+
+Example:
+
+.. code-block:: cpp
+
+   #if defined(OS_WINDOWS)
+        /* Some Windows-only code */
+   #endif
+
+
+.. warning::
+
+    The following is incorrect usage:
+
+    .. code-block:: cpp
+
+        #if OS_WINDOWS
+            /* Some Windows-only code */
+        #endif
+
+    This will cause compilation error on non-Windows OS,
+    because this macro won't be defined. Use :c:macro:`IS_OS_WINDOWS` instead.
+
+
+
+.. doxygendefine:: IS_OS_UNIX
+
+.. doxygendefine:: IS_OS_LINUX
+
+.. doxygendefine:: IS_OS_WINDOWS
+
+
+Example:
+
+.. code-block:: cpp
+
+   #if IS_OS_WINDOWS
+        /* Some Windows-only code */
+   #endif
+
+
+.. warning::
+
+    The following is incorrect usage:
+
+    .. code-block:: cpp
+
+        #if defined(IS_OS_WINDOWS)
+            /* Some Windows-only code */
+        #endif
+
+    This will be always true, as this macro always defined. Use :c:macro:`OS_WINDOWS` instead.
+
+
+Semantic Version
+----------------
+
+.. doxygenstruct:: version
+
+
+OS Info
+-------
+
+.. doxygenfunction:: os::name
+
+.. doxygenfunction:: os::pretty_name
+
+.. doxygenfunction:: os::codename
+
+.. doxygenfunction:: os::version
+
+.. doxygenfunction:: os::version_string
+
+.. doxygenfunction:: os::info
+
+.. doxygenstruct:: os::info_t
