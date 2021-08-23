@@ -127,7 +127,7 @@ Kernel Info
 .. doxygenfunction:: os::kernel::info
 
 
-Keyboard I/O
+Keyboard Input
 ------------
 
 .. doxygenenum:: os::keyboard::vk
