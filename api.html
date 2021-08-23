@@ -242,11 +242,126 @@ because this macro won’t be defined. Use <a class="reference internal" href="#
 <dt class="sig sig-object cpp" id="_CPPv47version">
 <span id="_CPPv37version"></span><span id="_CPPv27version"></span><span id="version"></span><span class="target" id="structversion"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv47version" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Struct to represent semantic versioning. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7version7versionEjjj">
+<span id="_CPPv3N7version7versionEjjj"></span><span id="_CPPv2N7version7versionEjjj"></span><span id="version::version__unsigned.unsigned.unsignedCE"></span><span class="target" id="structversion_1acbee2dd3c47184c0b95541a7dfad383f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">major</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">minor</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">patch</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N7version7versionEjjj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct version from major, minor and patch numbers. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N7version7versionENSt11string_viewE">
+<span id="_CPPv3N7version7versionENSt11string_viewE"></span><span id="_CPPv2N7version7versionENSt11string_viewE"></span><span id="version::version__std::string_viewCE"></span><span class="target" id="structversion_1ad4332f7da7dbf25c83dfecb20300a4c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N7version7versionENSt11string_viewE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Construct version from string. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If string format is wrong, no exception is thrown. All successfully read values will be saved. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>str</strong> – String with format ” &#64;ref major. &#64;ref minor. &#64;ref patch”</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7versioneqERK7version">
+<span id="_CPPv3NK7versioneqERK7version"></span><span id="_CPPv2NK7versioneqERK7version"></span><span id="version::eq-operator__versionCRCCE"></span><span class="target" id="structversion_1abe517d1198ea3776e7da8eb946c32bf2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versioneqERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check version for equality. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7versionltERK7version">
+<span id="_CPPv3NK7versionltERK7version"></span><span id="_CPPv2NK7versionltERK7version"></span><span id="version::lt-operator__versionCRCCE"></span><span class="target" id="structversion_1a1642f840aa570a1abbb16c1930ba0aa5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionltERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if version is less. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7versionleERK7version">
+<span id="_CPPv3NK7versionleERK7version"></span><span id="_CPPv2NK7versionleERK7version"></span><span id="version::lte-operator__versionCRCCE"></span><span class="target" id="structversion_1a60d9ed85a373f2dc56bdb8a251de3b41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionleERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if version is less or equal. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7versiongtERK7version">
+<span id="_CPPv3NK7versiongtERK7version"></span><span id="_CPPv2NK7versiongtERK7version"></span><span id="version::gt-operator__versionCRCCE"></span><span class="target" id="structversion_1afa2248461a775fc23d0715ef6a50dc82"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versiongtERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if version is greater. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7versiongeERK7version">
+<span id="_CPPv3NK7versiongeERK7version"></span><span id="_CPPv2NK7versiongeERK7version"></span><span id="version::gte-operator__versionCRCCE"></span><span class="target" id="structversion_1a3f44e5674a063015c97b59134a308270"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versiongeERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if version is greater or equal. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7versionneERK7version">
+<span id="_CPPv3NK7versionneERK7version"></span><span id="_CPPv2NK7versionneERK7version"></span><span id="version::neq-operator__versionCRCCE"></span><span class="target" id="structversion_1a3430d43f67f6e3f3b76f6163c136e31a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionneERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if version is not equal. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK7version3strEv">
+<span id="_CPPv3NK7version3strEv"></span><span id="_CPPv2NK7version3strEv"></span><span id="version::strC"></span><span class="target" id="structversion_1a569f9deaedeb0876540fde00ab52f51e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">str</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7version3strEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get version string in format ” &#64;ref major. &#64;ref minor. &#64;ref patch”. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7version5majorE">
+<span id="_CPPv3N7version5majorE"></span><span id="_CPPv2N7version5majorE"></span><span id="version::major__unsigned"></span><span class="target" id="structversion_1a0f59ecc10d68a05078e810c62aa0bc8c"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">major</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5majorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Major version. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7version5minorE">
+<span id="_CPPv3N7version5minorE"></span><span id="_CPPv2N7version5minorE"></span><span id="version::minor__unsigned"></span><span class="target" id="structversion_1a8b2ab9f5dd56c6527d73bb1db9c93238"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5minorE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Minor version. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N7version5patchE">
+<span id="_CPPv3N7version5patchE"></span><span id="_CPPv2N7version5patchE"></span><span id="version::patch__unsigned"></span><span class="target" id="structversion_1a823cb8466b33b40b6502c75acb5024c0"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">patch</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5patchE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Patch or build version. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </div>
 <div class="section" id="os-info">
 <h2>OS Info<a class="headerlink" href="#os-info" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6type_tE">
+<span id="_CPPv3N2os6type_tE"></span><span id="_CPPv2N2os6type_tE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">type_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Possible OS types. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6type_t9undefinedE">
+<span id="_CPPv3N2os6type_t9undefinedE"></span><span id="_CPPv2N2os6type_t9undefinedE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41afbbb0a0a8dcb6bd6295067e22d38bbc4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">undefined</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t9undefinedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6type_t5linuxE">
+<span id="_CPPv3N2os6type_t5linuxE"></span><span id="_CPPv2N2os6type_t5linuxE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41af2429edd536fa302cfdf991dd078a73c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linux</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t5linuxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6type_t7windowsE">
+<span id="_CPPv3N2os6type_t7windowsE"></span><span id="_CPPv2N2os6type_t7windowsE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41a47e111c553e279e2fc797b346512e8af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windows</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t7windowsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2os4typeEv">
+<span id="_CPPv3N2os4typeEv"></span><span id="_CPPv2N2os4typeEv"></span><span id="os::typeCE"></span><span class="target" id="info_8hpp_1ad4d1b587a420861d1e8343eb1c1ab5f6"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6type_tE" title="os::type_t"><span class="n"><span class="pre">type_t</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2os4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get type of OS at compile time. </p>
+</dd></dl>
+
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os4nameEv">
 <span id="_CPPv3N2os4nameEv"></span><span id="_CPPv2N2os4nameEv"></span><span id="os::name"></span><span class="target" id="info_8hpp_1ab37e305cbdb16d18da83aca339edb0d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4nameEv" title="Permalink to this definition">¶</a><br /></dt>
@@ -291,8 +406,47 @@ because this macro won’t be defined. Use <a class="reference internal" href="#
 
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_tE">
-<span id="_CPPv3N2os6info_tE"></span><span id="_CPPv2N2os6info_tE"></span><span id="os::info_t"></span><span class="target" id="structos_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_tE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_tE"></span><span id="_CPPv2N2os6info_tE"></span><span id="os::info_t"></span><span class="target" id="structos_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_tE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Full OS info. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6info_t4typeE">
+<span id="_CPPv3N2os6info_t4typeE"></span><span id="_CPPv2N2os6info_t4typeE"></span><span id="os::info_t::type__type_t"></span><span class="target" id="structos_1_1info__t_1a248c9bf156b08a522c0ee16b37177110"></span><a class="reference internal" href="#_CPPv4N2os6type_tE" title="os::type_t"><span class="n"><span class="pre">type_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N2os6type_t9undefinedE" title="os::undefined"><span class="n"><span class="pre">undefined</span></span></a><a class="headerlink" href="#_CPPv4N2os6info_t4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OS type. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6info_t4nameE">
+<span id="_CPPv3N2os6info_t4nameE"></span><span id="_CPPv2N2os6info_t4nameE"></span><span id="os::info_t::name__ss"></span><span class="target" id="structos_1_1info__t_1adf8240fca09ca9ed06dc49a157e7b2ca"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OS name. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6info_t11pretty_nameE">
+<span id="_CPPv3N2os6info_t11pretty_nameE"></span><span id="_CPPv2N2os6info_t11pretty_nameE"></span><span id="os::info_t::pretty_name__ss"></span><span class="target" id="structos_1_1info__t_1ade3789e31dd6a74146d6ef849332cde0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pretty_name</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t11pretty_nameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OS name with version. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6info_t8codenameE">
+<span id="_CPPv3N2os6info_t8codenameE"></span><span id="_CPPv2N2os6info_t8codenameE"></span><span id="os::info_t::codename__ss"></span><span class="target" id="structos_1_1info__t_1a85ccaaffe6c1b811f41cca7069cca41f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">codename</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t8codenameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OS codename (if exists) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6info_t7versionE">
+<span id="_CPPv3N2os6info_t7versionE"></span><span id="_CPPv2N2os6info_t7versionE"></span><span id="os::info_t::version__version"></span><span class="target" id="structos_1_1info__t_1a12ac81e0f031bd8cfc480a00fb6d2c78"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t7versionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OS major, minor and patch version as integers. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6info_t14version_stringE">
+<span id="_CPPv3N2os6info_t14version_stringE"></span><span id="_CPPv2N2os6info_t14version_stringE"></span><span id="os::info_t::version_string__ss"></span><span class="target" id="structos_1_1info__t_1af02d7449d866c4a83a7527e3741d2ba0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t14version_stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>OS version as string. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </div>

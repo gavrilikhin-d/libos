@@ -71,10 +71,15 @@ Semantic Version
 ----------------
 
 .. doxygenstruct:: version
+   :members:
 
 
 OS Info
 -------
+
+.. doxygenenum:: os::type_t
+
+.. doxygenfunction:: os::type
 
 .. doxygenfunction:: os::name
 
@@ -89,3 +94,4 @@ OS Info
 .. doxygenfunction:: os::info
 
 .. doxygenstruct:: os::info_t
+   :members:
