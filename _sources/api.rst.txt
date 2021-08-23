@@ -128,9 +128,13 @@ Kernel Info
 
 
 Keyboard Input
-------------
+--------------
 
 .. doxygenenum:: os::keyboard::vk
+
+.. tip::
+
+    You can shorten enum name with :code:`using os::keyboard::vk`.
 
 .. tip::
 
