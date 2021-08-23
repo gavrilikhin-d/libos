@@ -166,24 +166,18 @@
 <div class="section" id="macros">
 <h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
 <p>There are 2 ways to write OS-specific code:</p>
-<dl class="cpp macro">
-<dt class="sig sig-object cpp" id="c.OS_UNIX">
-<span class="target" id="macros_8h_1a2682d177c2a329a69e2b6c8a15108734"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_UNIX</span></span></span><a class="headerlink" href="#c.OS_UNIX" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Defined if OS is Unix-like. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt class="sig sig-object cpp" id="c.OS_LINUX">
-<span class="target" id="macros_8h_1ae273c7db78098028c7a6b6b230ac0503"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_LINUX</span></span></span><a class="headerlink" href="#c.OS_LINUX" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Defined if OS is Linux. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt class="sig sig-object cpp" id="c.OS_WINDOWS">
-<span class="target" id="macros_8h_1a6aadf1cbdc6ed6b61b4b0bdffb62e727"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_WINDOWS</span></span></span><a class="headerlink" href="#c.OS_WINDOWS" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Defined if OS is Windows. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygendefine: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygendefine: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygendefine: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
 <p>Example:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#if defined(OS_WINDOWS)</span>
      <span class="cm">/* Some Windows-only code */</span>
@@ -199,26 +193,20 @@
 </pre></div>
 </div>
 <p>This will cause compilation error on non-Windows OS,
-because this macro won’t be defined. Use <a class="reference internal" href="#c.IS_OS_WINDOWS" title="IS_OS_WINDOWS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">IS_OS_WINDOWS</span></code></a> instead.</p>
+because this macro won’t be defined. Use <code class="xref c c-macro docutils literal notranslate"><span class="pre">IS_OS_WINDOWS</span></code> instead.</p>
 </div>
-<dl class="cpp macro">
-<dt class="sig sig-object cpp" id="c.IS_OS_UNIX">
-<span class="target" id="macros_8h_1a67a39b6433b1f63b1a68527d9b07e169"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_UNIX</span></span></span><a class="headerlink" href="#c.IS_OS_UNIX" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set to 1 if OS is Unix-like, 0 otherwise. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt class="sig sig-object cpp" id="c.IS_OS_LINUX">
-<span class="target" id="macros_8h_1adfb0c3b3501ef57ec72fbd0a7940e0a7"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_LINUX</span></span></span><a class="headerlink" href="#c.IS_OS_LINUX" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set to 1 if OS is Linux, 0 otherwise. </p>
-</dd></dl>
-
-<dl class="cpp macro">
-<dt class="sig sig-object cpp" id="c.IS_OS_WINDOWS">
-<span class="target" id="macros_8h_1ac14557764a359e681c195c0b60ceedaa"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_WINDOWS</span></span></span><a class="headerlink" href="#c.IS_OS_WINDOWS" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Set to 1 if OS is Windows, 0 otherwise. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygendefine: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygendefine: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygendefine: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
 <p>Example:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#if IS_OS_WINDOWS</span>
      <span class="cm">/* Some Windows-only code */</span>
@@ -233,68 +221,46 @@ because this macro won’t be defined. Use <a class="reference internal" href="#
 <span class="cp">#endif</span>
 </pre></div>
 </div>
-<p>This will be always true, as this macro always defined. Use <a class="reference internal" href="#c.OS_WINDOWS" title="OS_WINDOWS"><code class="xref c c-macro docutils literal notranslate"><span class="pre">OS_WINDOWS</span></code></a> instead.</p>
+<p>This will be always true, as this macro always defined. Use <code class="xref c c-macro docutils literal notranslate"><span class="pre">OS_WINDOWS</span></code> instead.</p>
 </div>
 </div>
 <div class="section" id="semantic-version">
 <h2>Semantic Version<a class="headerlink" href="#semantic-version" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv47version">
-<span id="_CPPv37version"></span><span id="_CPPv27version"></span><span id="version"></span><span class="target" id="structversion"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv47version" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Struct to represent semantic versioning. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenstruct: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
 </div>
 <div class="section" id="os-info">
 <h2>OS Info<a class="headerlink" href="#os-info" title="Permalink to this headline">¶</a></h2>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2os4nameEv">
-<span id="_CPPv3N2os4nameEv"></span><span id="_CPPv2N2os4nameEv"></span><span id="os::name"></span><span class="target" id="info_8hpp_1ab37e305cbdb16d18da83aca339edb0d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4nameEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get OS name. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2os11pretty_nameEv">
-<span id="_CPPv3N2os11pretty_nameEv"></span><span id="_CPPv2N2os11pretty_nameEv"></span><span id="os::pretty_name"></span><span class="target" id="info_8hpp_1a15d3270296e79943b444bd364b4d6bc8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pretty_name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os11pretty_nameEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get OS name with version. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8codenameEv">
-<span id="_CPPv3N2os8codenameEv"></span><span id="_CPPv2N2os8codenameEv"></span><span id="os::codename"></span><span class="target" id="info_8hpp_1aaff212587176a844878d09000bac05c5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">codename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8codenameEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get OS codename (if exists) </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2os7versionEv">
-<span id="_CPPv3N2os7versionEv"></span><span id="_CPPv2N2os7versionEv"></span><span id="os::version"></span><span class="target" id="info_8hpp_1a95122cb32d80c25c07a245cef3fb9d6b"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os7versionEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get OS major, minor and patch version as integers. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2os14version_stringEv">
-<span id="_CPPv3N2os14version_stringEv"></span><span id="_CPPv2N2os14version_stringEv"></span><span id="os::version_string"></span><span class="target" id="info_8hpp_1afdb158bf490211580a8bdd948ee1234f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os14version_stringEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get OS version as string. </p>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv4N2os4infoEv">
-<span id="_CPPv3N2os4infoEv"></span><span id="_CPPv2N2os4infoEv"></span><span id="os::info"></span><span class="target" id="info_8hpp_1ac2176cd9849a424260f3fbd5c7c1f74b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6info_tE" title="os::info_t"><span class="n"><span class="pre">info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4infoEv" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get full OS info. </p>
-<p>Obtaining OS info is very expensive. Hence, it’s statically allocated and read exactly once.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>const <a class="reference internal" href="#structos_1_1info__t"><span class="std std-ref">info_t</span></a>&amp; Ref to OS info </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv4N2os6info_tE">
-<span id="_CPPv3N2os6info_tE"></span><span id="_CPPv2N2os6info_tE"></span><span id="os::info_t"></span><span class="target" id="structos_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_tE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Full OS info. </p>
-</dd></dl>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenstruct: Cannot find file: /github/workspace/docs/build/doxygen/xml/index.xml</p>
+</div>
 </div>
 </div>
 
