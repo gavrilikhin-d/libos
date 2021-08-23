@@ -44,6 +44,11 @@ Example:
 
 .. doxygendefine:: IS_OS_WINDOWS
 
+.. tip::
+
+   If your code is valid for any platform,
+   you may want to use :cpp:func:`os::type` with :code:`if constexpr`.
+
 
 Example:
 
@@ -81,6 +86,15 @@ OS Info
 
 .. doxygenfunction:: os::type
 
+Usage:
+
+.. code-block:: cpp
+
+    if constexpr (os::type() == os::linux)
+    {
+        /* Code for linux (but must compile on every OS) */
+    }
+
 .. doxygenfunction:: os::name
 
 .. doxygenfunction:: os::pretty_name
@@ -91,7 +105,47 @@ OS Info
 
 .. doxygenfunction:: os::version_string
 
-.. doxygenfunction:: os::info
-
 .. doxygenstruct:: os::info_t
    :members:
+
+.. doxygenfunction:: os::info
+
+
+
+Kernel Info
+-----------
+
+.. doxygenfunction:: os::kernel::name
+
+.. doxygenfunction:: os::kernel::version
+
+.. doxygenfunction:: os::kernel::version_string
+
+.. doxygenstruct:: os::kernel::info_t
+   :members:
+
+.. doxygenfunction:: os::kernel::info
+
+
+Keyboard I/O
+------------
+
+.. doxygenenum:: os::keyboard::vk
+
+.. tip::
+
+   You can make :cpp:struct:`combination <os::keyboard::combination>`
+   of :cpp:enum:`virtual keys <os::keyboard::vk>` with :code:`vk::Shift + vk::A`.
+
+.. doxygenstruct:: os::keyboard::combination
+   :members:
+
+.. doxygenfunction:: os::keyboard::is_pressed
+
+.. doxygenfunction:: os::keyboard::pressed_keys
+
+.. doxygenfunction:: os::keyboard::press
+
+.. doxygenfunction:: os::keyboard::release
+
+.. doxygenfunction:: os::keyboard::click
