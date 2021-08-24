@@ -4,7 +4,7 @@
 [![Documentation](https://img.shields.io/badge/docs-online-informational?label=Docs&style=flat&link=https://gavrilikhin-d.github.io/libos/)](https://gavrilikhin-d.github.io/libos/)
 [![License](https://img.shields.io/github/license/gavrilikhin-d/libos?label=License)](https://github.com/gavrilikhin-d/libos/blob/master/LICENSE)
 
-Cross-platform OS features in C++17.
+LibOS is a modern C++17 library that makes OS-specific features cross-platform.
 
 Ever tried to get Windows version after Windows 8? Or to send keystrokes on all most popular platforms? Then you must understand what a pain it is.
 Those wondering *"What the hell is an X server and do I have it???"* welcome to use our library!
@@ -30,25 +30,41 @@ P.S: most likely it's already installed
 ## Getting started
 
 There are 2 ways to install the library for your convenience:
-1. **CMake** (prefered)
-2. **Header-only**
+- **CMake** (prefered)
+- **Header-only**
 
 ### CMake
 
-Download sources:
-```
-git clone https://github.com/gavrilikhin-d/libos
-```
+1. Download sources
+   ```
+   git clone https://github.com/gavrilikhin-d/libos
+   ```
 
-Build and install:
-```
-cd os
-mkdir build
-cd build
-cmake ..
-cmake --build .
-cmake --install .
-```
+2. Make `build` directory in repo's root folder
+   ```
+   mkdir build
+   cd build
+   ```
+   
+3. Configure CMake <br/>
+   With GUI: 
+   ```
+   ccmake ..
+   ```
+   Without GUI: 
+   ```
+   cmake -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local ..
+   ```
+
+4. Build
+   ```
+   cmake --build .
+   ```
+   
+5. Install
+   ```
+   sudo cmake --install .
+   ```
 
 ### Header-only
 
