@@ -31,6 +31,9 @@ if (WIN32)
             windows/kernel.cpp
             windows/keyboard.cpp
     )
+
+    # Link dynamic library on Windows
+    set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 endif()
 
 add_library(os ${os_sources} ${os_headers})

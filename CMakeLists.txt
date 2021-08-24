@@ -18,4 +18,10 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 option(BUILD_SHARED_LIBS "Build shared libraries" ON)
 
+option(LIBOS_BUILD_EXAMPLES "Build examples for LibOS library" ON)
+
 add_subdirectory(src)
+
+if(LIBOS_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()

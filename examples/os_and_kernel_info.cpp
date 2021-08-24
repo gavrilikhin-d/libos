@@ -31,7 +31,7 @@ int main()
         << "Kernel name: " << os::kernel::name() << "\n"
         // Needs explicit str() call.
         // Result may be not the same as version_string().
-        << "Kernel version: " << os::kernel::version().str()
+        << "Kernel version: " << os::kernel::version().str() << "\n"
         << "Kernel version string: " << os::kernel::version_string() << "\n";
 
     return 0;
