@@ -45,13 +45,13 @@ There are 2 ways to install the library for your convenience:
    mkdir build
    cd build
    ```
-   
+
 3. Configure CMake <br/>
-   With GUI: 
+   With GUI:
    ```
    ccmake ..
    ```
-   Without GUI: 
+   Without GUI:
    ```
    cmake -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local ..
    ```
@@ -60,7 +60,7 @@ There are 2 ways to install the library for your convenience:
    ```
    cmake --build .
    ```
-   
+
 5. Install
    ```
    sudo cmake --install .
@@ -68,11 +68,11 @@ There are 2 ways to install the library for your convenience:
 
 ### Header-only
 
-Download `include/os/header-only/os.hpp` and `#include` it.
+Just `#include` files from `os/header-only` as needed.
 
-> **NOTE:** Don't forget to compile with `-std=c++17` or greater, because it's C++17 library.
+> **NOTE:** Compile with `-std=c++17` or greater.
 
-> **NOTE:** When compiling on Linux, don't forget to link `-lX11` and `-lXtst`.
+> **NOTE:** When compiling on Linux, link `-lX11 -lXtst` if you are using `os/header-only/keyboard.hpp`.
 
 ## Contributing
 
