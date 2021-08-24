@@ -234,12 +234,31 @@ struct combination
     /// Append a combination
     combination & operator+=(const combination &combo)
     {
+        keys.reserve( std::size( keys ) + std::size( combo.keys ) );
         keys.insert(keys.end(), combo.keys.begin(), combo.keys.end());
         return *this;
     }
 
     /// Concatinate 2 combinations
-    combination operator+(const combination &combo) const { return combination{*this} += combo; }
+    combination operator+(const combination &combo) const
+    {
+        combination concatenated;
+
+        concatenated.keys.reserve( std::size( keys ) + std::size( combo.keys ) );
+
+        auto resuming_place = std::copy(
+            std::begin( keys ) ,
+            std::end( keys ) ,
+            std::begin( concatenated.keys )
+        );
+        std::copy(
+            std::begin( combo.keys ) ,
+            std::end( combo.keys ) ,
+            resuming_place
+        );
+
+        return concatenated;
+    }
 };
 
 /// Make a combination from 2 virtual keys
