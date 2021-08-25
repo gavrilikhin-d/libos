@@ -42,8 +42,10 @@ add_library(os ${os_sources} ${os_headers})
 target_compile_features(os PUBLIC cxx_std_17)
 
 if (UNIX)
+    find_package( X11 REQUIRED )
+
     # Library to manipulate GUI on linux
-    target_link_libraries(os PRIVATE "-lX11" "-lXtst")
+    target_link_libraries(os PUBLIC X11::Xtst X11::X11)
 endif()
 
 # Specify directories which the compiler should look for headers
