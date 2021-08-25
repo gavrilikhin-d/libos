@@ -243,16 +243,16 @@ struct combination
     {
         combination concatenated;
 
-        concatenated.keys.reserve( std::size( keys ) + std::size( combo.keys ) );
+        concatenated.keys.reserve( keys.size() + combo.keys.size() );
 
         auto resuming_place = std::copy(
-            std::begin( keys ) ,
-            std::end( keys ) ,
-            std::begin( concatenated.keys )
+            keys.begin(),
+            keys.end(),
+            concatenated.keys.begin()
         );
         std::copy(
-            std::begin( combo.keys ) ,
-            std::end( combo.keys ) ,
+            combo.keys.begin(),
+            combo.keys.end(),
             resuming_place
         );
 
