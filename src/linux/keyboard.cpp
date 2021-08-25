@@ -9,33 +9,29 @@
 #include <X11/keysym.h>
 #include <X11/extensions/XTest.h>
 
+#include "xlib_common.hpp"
+
 namespace os::detail
 {
 
-// RAII wrapper for X Server's Display
-class display_handler
+/// DRY function for sending keys with XTest
+void xtest_fake_key_events(const os::keyboard::combination &combo, bool is_press)
 {
-public:
-    static display_handler & get()
+    Display *display = os::detail::display_handler::get().native();
+
+    for (const auto &key : combo.keys)
     {
-        static display_handler handler { XOpenDisplay(nullptr) };
-        return handler;
+        XTestFakeKeyEvent(
+            display,
+            XKeysymToKeycode(
+                display,
+                static_cast<KeySym>(key) // Our vk values same as KeySym for linux
+            ),
+            is_press,
+            0 // delay
+        );
     }
-
-    Display * native() const { return display; }
-
-    display_handler(const display_handler &) = delete;
-    display_handler(display_handler &&) = delete;
-    void operator=(const display_handler &) = delete;
-    void operator=(display_handler &&) = delete;
-
-    ~display_handler() { XCloseDisplay(display); }
-
-private:
-    display_handler(Display *display) : display(display) {}
-
-    Display *display = nullptr;
-};
+}
 
 } // namespace os::detail
 
@@ -45,14 +41,14 @@ namespace os::keyboard
 // Check if every key in combination is pressed
 bool is_pressed(const combination &combo)
 {
-    auto &&h = os::detail::display_handler::get();
+    Display *display = os::detail::display_handler::get().native();
 
     char keys_return[32];
-    XQueryKeymap(h.native(), keys_return);
+    XQueryKeymap(display, keys_return);
 
     for (const auto &key : combo.keys)
     {
-        KeyCode kc = XKeysymToKeycode(h.native(), static_cast<KeySym>(key));
+        KeyCode kc = XKeysymToKeycode(display, static_cast<KeySym>(key));
         // Key not pressed
         if (!(keys_return[kc / 8] & (1 << (kc % 8)))) { return false; }
     }
@@ -65,10 +61,10 @@ combination pressed_keys()
 {
     combination combo;
 
-    auto &&h = os::detail::display_handler::get();
+    Display *display = os::detail::display_handler::get().native();
 
     char keys_return[32];
-    XQueryKeymap(h.native(), keys_return);
+    XQueryKeymap(display, keys_return);
 
     /* Check all 256 virtual keys */
     for (size_t m = 0; m < 32; ++m)
@@ -87,39 +83,13 @@ combination pressed_keys()
 // Press combination of keys (until release)
 void press(const combination &combo)
 {
-    auto &&h = os::detail::display_handler::get();
-
-    for (const auto &key : combo.keys)
-    {
-        XTestFakeKeyEvent(
-            h.native(), // Display *
-            XKeysymToKeycode(
-                h.native(), // Display *
-                static_cast<KeySym>(key) // Our vk values same as KeySym for linux
-            ),
-            true, // is_press
-            0     // delay
-        );
-    }
+    os::detail::xtest_fake_key_events(combo, true /*means press*/);
 }
 
 // Release combination of keys
 void release(const combination &combo)
 {
-    auto &&h = os::detail::display_handler::get();
-
-    for (const auto &key : combo.keys)
-    {
-        XTestFakeKeyEvent(
-            h.native(), // Display *
-            XKeysymToKeycode(
-                h.native(), // Display *
-                static_cast<KeySym>(key) // Our vk values same as KeySym for linux
-            ),
-            false, // is_press
-            0     // delay
-        );
-    }
+    os::detail::xtest_fake_key_events(combo, false /*means release*/);
 }
 
 } // namespace os::keyboard
