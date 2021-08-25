@@ -42,20 +42,17 @@ namespace os::mouse
 /// Mouse virtual buttons
 enum class button
 {
-    left,
+    /// Left mouse button
+    _1 = 1, left   = _1,
     /// Scroll wheel
-    middle,
-    right,
+    _2 = 2, middle = _2,
+    /// Right mouse button
+    _3 = 3, right  = _3,
 
-    _1,
     /// Backward navigation in browser
-    backward = _1,
-    _2,
+    _4 = 4, backward = _4,
     /// Forward navigation in browser
-    forward = _2,
-    _3,
-    _4,
-    _5
+    _5 = 5, forward  = _5,
 };
 
 
