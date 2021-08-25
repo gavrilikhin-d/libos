@@ -234,7 +234,6 @@ struct combination
     /// Append a combination
     combination & operator+=(const combination &combo)
     {
-        keys.reserve( std::size( keys ) + std::size( combo.keys ) );
         keys.insert(keys.end(), combo.keys.begin(), combo.keys.end());
         return *this;
     }
