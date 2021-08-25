@@ -239,7 +239,25 @@ struct combination
     }
 
     /// Concatinate 2 combinations
-    combination operator+(const combination &combo) const { return combination{*this} += combo; }
+    combination operator+(const combination &combo) const
+    {
+        combination concatenated;
+
+        concatenated.keys.reserve( keys.size() + combo.keys.size() );
+
+        auto resuming_place = std::copy(
+            keys.begin(),
+            keys.end(),
+            concatenated.keys.begin()
+        );
+        std::copy(
+            combo.keys.begin(),
+            combo.keys.end(),
+            resuming_place
+        );
+
+        return concatenated;
+    }
 };
 
 /// Make a combination from 2 virtual keys
