@@ -13,6 +13,10 @@ jobs:
       working-directory: docs
       run: mkdir build
 
+    - name: Update version
+      working-directory: docs
+      run: python update_version.py
+
     - name: Run doxygen
       uses: mattnotmitt/doxygen-action@v1
       with:
