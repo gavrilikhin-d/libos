@@ -8,6 +8,7 @@ set(
         ${PROJECT_SOURCE_DIR}/include/os/info.hpp
         ${PROJECT_SOURCE_DIR}/include/os/kernel.hpp
         ${PROJECT_SOURCE_DIR}/include/os/keyboard.hpp
+        ${PROJECT_SOURCE_DIR}/include/os/libos.hpp
         ${PROJECT_SOURCE_DIR}/include/os/macros.h
         ${PROJECT_SOURCE_DIR}/include/os/os.hpp
         ${PROJECT_SOURCE_DIR}/include/os/version.hpp

@@ -3,8 +3,19 @@
 #include "os/info.hpp"
 #include "os/kernel.hpp"
 
+// Get library version
+#include "os/libos.hpp"
+
 int main()
 {
+    // Print library information. Also possible:
+    // std::cout << "LibOS version: " << libos::version.str() << "\n";
+    // std::cout << "LibOS version: " << LIBOS_VERSION_STRING << "\n";
+    std::cout << "LibOS version: " << libos::version_string << "\n";
+
+    std::cout << "\n";
+
+    // Get OS type. Also possible to use #ifdef OS_<TYPE> or #if IS_OS_<TYPE>
     std::cout << "OS type: ";
     if constexpr (os::type() == os::linux) { std::cout << "linux";     }
     else if (os::type() == os::windows)    { std::cout << "windows";   }

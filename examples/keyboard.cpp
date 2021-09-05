@@ -1,10 +1,21 @@
 #include <iostream>
 #include <thread>
 
+#include "os/version.hpp"
 #include "os/keyboard.hpp"
+
+// Get library version
+#include "os/libos.hpp"
 
 int main()
 {
+    // Print library information. Also possible:
+    // std::cout << "LibOS version: " << libos::version.str() << "\n";
+    // std::cout << "LibOS version: " << LIBOS_VERSION_STRING << "\n";
+    std::cout << "LibOS version: " << libos::version_string << "\n";
+
+    std::cout << "\n";
+
     // Shorten virtual keys name.
     // os::keyboard::vk::Shift -> vk::Shift
     using os::keyboard::vk;

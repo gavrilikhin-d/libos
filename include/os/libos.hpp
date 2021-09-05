@@ -1,4 +1,4 @@
-// Include all headers
+// Library information
 
 // This file is part of LibOS.
 
@@ -22,15 +22,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-/** @file os/os.hpp
- *  Include all headers
+/** @file os/libos.hpp
+ *  Library information
  */
 
 #pragma once
 
-#include "os/info.hpp"
-#include "os/kernel.hpp"
-#include "os/keyboard.hpp"
-#include "os/libos.hpp"
-#include "os/macros.h"
+#include <string_view>
+
 #include "os/version.hpp"
+
+/// LibOS version string macro
+#define LIBOS_VERSION_STRING "0.1.0"
+
+/// Library information
+namespace libos
+{
+
+/// LibOS version string
+constexpr std::string_view version_string = LIBOS_VERSION_STRING;
+/// LibOS version struct
+constexpr ::version version = ::version{LIBOS_VERSION_STRING};
+
+} // namespace libos
