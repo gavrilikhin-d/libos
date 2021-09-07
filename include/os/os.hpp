@@ -28,9 +28,10 @@
 
 #pragma once
 
+#include "os/macros.h"
+#include "os/version.hpp"
+
 #include "os/info.hpp"
 #include "os/kernel.hpp"
 #include "os/keyboard.hpp"
 #include "os/libos.hpp"
-#include "os/macros.h"
-#include "os/version.hpp"
