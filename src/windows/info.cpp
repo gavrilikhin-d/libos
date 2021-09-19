@@ -5,12 +5,6 @@
 	#error "This code is for Windows only!"
 #endif
 
-/* WMI to get OS info */
-#define _WIN32_DCOM
-#include <comdef.h>
-#include <Wbemidl.h>
-#pragma comment(lib, "wbemuuid.lib")
-
 namespace os
 {
 
@@ -43,199 +37,53 @@ const info_t& info()
         i.pretty_name = "Windows"; // Will be updated
         i.codename = codename();
 
-        // Accessing WMI like here:
-        // https://docs.microsoft.com/en-us/windows/win32/wmisdk/example--getting-wmi-data-from-the-local-computer
+        // KUSER_SHARED_DATA address.
+        // Offsets are taken from http://terminus.rewolf.pl/terminus/structures/ntdll/_KUSER_SHARED_DATA_x64.html
+        constexpr uintptr_t data_adress = uintptr_t{ 0x7ffe0000 };
+        const uint32_t major = *reinterpret_cast<const uint32_t*>(data_adress + 0x26c);
+        const uint32_t minor = *reinterpret_cast<const uint32_t*>(data_adress + 0x270);
+        const uint32_t patch = *reinterpret_cast<const uint32_t*>(data_adress + 0x260);
 
-        HRESULT hres;
+        i.version = ::version{ major, minor, patch };
+        i.version_string = i.version.str();
 
-        // Step 1: --------------------------------------------------
-        // Initialize COM. ------------------------------------------
-
-        hres = CoInitializeEx(0, COINIT_MULTITHREADED);
-        if (FAILED(hres)) { return i; }
-
-        // Step 2: --------------------------------------------------
-        // Set general COM security levels --------------------------
-
-        hres = CoInitializeSecurity(
-            NULL,
-            -1,                          // COM authentication
-            NULL,                        // Authentication services
-            NULL,                        // Reserved
-            RPC_C_AUTHN_LEVEL_DEFAULT,   // Default authentication
-            RPC_C_IMP_LEVEL_IMPERSONATE, // Default Impersonation
-            NULL,                        // Authentication info
-            EOAC_NONE,                   // Additional capabilities
-            NULL                         // Reserved
-        );
-
-
-        if (FAILED(hres))
+        i.pretty_name += " ";
+        if (i.version >= ::version{ 10, 0 })
         {
-            CoUninitialize();
-            return i;
+            i.pretty_name += std::to_string(i.version.major);
         }
-
-        // Step 3: ---------------------------------------------------
-        // Obtain the initial locator to WMI -------------------------
-
-        IWbemLocator* pLoc = NULL;
-
-        hres = CoCreateInstance(
-            CLSID_WbemLocator,
-            0,
-            CLSCTX_INPROC_SERVER,
-            IID_IWbemLocator, (LPVOID*)&pLoc);
-
-        if (FAILED(hres))
+        else if (i.version >= ::version{ 6, 3 })
         {
-            CoUninitialize();
-            return i;
+            i.pretty_name += "8.1";
         }
-
-        // Step 4: -----------------------------------------------------
-        // Connect to WMI through the IWbemLocator::ConnectServer method
-
-        IWbemServices* pSvc = NULL;
-
-        // Connect to the root\cimv2 namespace with
-        // the current user and obtain pointer pSvc
-        // to make IWbemServices calls.
-        hres = pLoc->ConnectServer(
-            _bstr_t(L"ROOT\\CIMV2"), // Object path of WMI namespace
-            NULL,                    // User name. NULL = current user
-            NULL,                    // User password. NULL = current
-            NULL,                    // Locale. NULL indicates current
-            NULL,                    // Security flags.
-            0,                       // Authority (for example, Kerberos)
-            0,                       // Context object
-            &pSvc                    // pointer to IWbemServices proxy
-        );
-
-        if (FAILED(hres))
+        else if (i.version >= ::version{ 6, 2 })
         {
-            pLoc->Release();
-            CoUninitialize();
-            return i;
+            i.pretty_name += "8";
         }
-
-
-        // Step 5: --------------------------------------------------
-        // Set security levels on the proxy -------------------------
-
-        hres = CoSetProxyBlanket(
-            pSvc,                        // Indicates the proxy to set
-            RPC_C_AUTHN_WINNT,           // RPC_C_AUTHN_xxx
-            RPC_C_AUTHZ_NONE,            // RPC_C_AUTHZ_xxx
-            NULL,                        // Server principal name
-            RPC_C_AUTHN_LEVEL_CALL,      // RPC_C_AUTHN_LEVEL_xxx
-            RPC_C_IMP_LEVEL_IMPERSONATE, // RPC_C_IMP_LEVEL_xxx
-            NULL,                        // client identity
-            EOAC_NONE                    // proxy capabilities
-        );
-
-        if (FAILED(hres))
+        else if (i.version >= ::version{ 6, 1 })
         {
-            pSvc->Release();
-            pLoc->Release();
-            CoUninitialize();
-            return i;
+            i.pretty_name += "7";
         }
-
-        // Step 6: --------------------------------------------------
-        // Use the IWbemServices pointer to make requests of WMI ----
-
-        // For example, get the name of the operating system
-        IEnumWbemClassObject* pEnumerator = NULL;
-        hres = pSvc->ExecQuery(
-            bstr_t("WQL"),
-            bstr_t("SELECT * FROM Win32_OperatingSystem"),
-            WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
-            NULL,
-            &pEnumerator);
-
-        if (FAILED(hres))
+        else if (i.version >= ::version{ 6, 0 })
         {
-            pSvc->Release();
-            pLoc->Release();
-            CoUninitialize();
-            return i;
+            i.pretty_name += "Vista";
         }
-
-        // Step 7: -------------------------------------------------
-        // Get the data from the query in step 6 -------------------
-
-        IWbemClassObject* pclsObj = NULL;
-        ULONG uReturn = 0;
-
-        while (pEnumerator)
+        else if (i.version >= ::version{ 5, 2 })
         {
-            HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
-
-            if (uReturn == 0) { break; }
-
-            VARIANT vtProp{};
-
-            // Get the value of the Version property
-            hr = pclsObj->Get(L"Version", 0, &vtProp, 0, 0);
-
-            std::wstring v_wstr = vtProp.bstrVal;
-
-            // Digits and points are ANSI symbols, so narrowing conversion from UTF-16 to UTF-8 is fine.
-            std::string v_str(v_wstr.begin(), v_wstr.end());
-
-            i.version = ::version{ v_str };
-            i.version_string = v_str;
-
-            i.pretty_name += " ";
-            if (i.version >= ::version{ 10, 0 })
-            {
-                i.pretty_name += std::to_string(i.version.major);
-            }
-            else if (i.version >= ::version{ 6, 3 })
-            {
-                i.pretty_name += "8.1";
-            }
-            else if (i.version >= ::version{ 6, 2 })
-            {
-                i.pretty_name += "8";
-            }
-            else if (i.version >= ::version{ 6, 1 })
-            {
-                i.pretty_name += "7";
-            }
-            else if (i.version >= ::version{ 6, 0 })
-            {
-                i.pretty_name += "Vista";
-            }
-            else if (i.version >= ::version{ 5, 2 })
-            {
-                i.pretty_name += "XP 64-Bit Edition";
-            }
-            else if (i.version >= ::version{ 5, 1 })
-            {
-                i.pretty_name += "XP";
-            }
-            else if (i.version >= ::version{ 5, 0 })
-            {
-                i.pretty_name += "2000";
-            }
-            else
-            {
-                i.pretty_name.pop_back(); // remove space
-            }
-
-            VariantClear(&vtProp);
-            pclsObj->Release();
+            i.pretty_name += "XP 64-Bit Edition";
         }
-
-        // Cleanup
-        // ========
-
-        pSvc->Release();
-        pLoc->Release();
-        pEnumerator->Release();
-        CoUninitialize();
+        else if (i.version >= ::version{ 5, 1 })
+        {
+            i.pretty_name += "XP";
+        }
+        else if (i.version >= ::version{ 5, 0 })
+        {
+            i.pretty_name += "2000";
+        }
+        else
+        {
+            i.pretty_name.pop_back(); // remove space
+        }
 
         init = false;
     }
