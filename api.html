@@ -1,72 +1,32 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>API Reference &mdash; LibOS 0.1.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Welcome to LibOS’s documentation!" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> LibOS
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -74,18 +34,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
@@ -98,92 +47,51 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">LibOS</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li>API Reference</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline"></a></h1>
 <p>The following section outlines the API of LibOS.</p>
 <div class="section" id="macros">
-<h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
+<h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline"></a></h2>
 <p>There are 2 ways to write OS-specific code:</p>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.OS_UNIX">
-<span class="target" id="macros_8h_1a2682d177c2a329a69e2b6c8a15108734"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_UNIX</span></span></span><a class="headerlink" href="#c.OS_UNIX" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="macros_8h_1a2682d177c2a329a69e2b6c8a15108734"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_UNIX</span></span></span><a class="headerlink" href="#c.OS_UNIX" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Defined if OS is Unix-like. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.OS_LINUX">
-<span class="target" id="macros_8h_1ae273c7db78098028c7a6b6b230ac0503"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_LINUX</span></span></span><a class="headerlink" href="#c.OS_LINUX" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="macros_8h_1ae273c7db78098028c7a6b6b230ac0503"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_LINUX</span></span></span><a class="headerlink" href="#c.OS_LINUX" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Defined if OS is Linux. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.OS_WINDOWS">
-<span class="target" id="macros_8h_1a6aadf1cbdc6ed6b61b4b0bdffb62e727"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_WINDOWS</span></span></span><a class="headerlink" href="#c.OS_WINDOWS" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="macros_8h_1a6aadf1cbdc6ed6b61b4b0bdffb62e727"></span><span class="sig-name descname"><span class="n"><span class="pre">OS_WINDOWS</span></span></span><a class="headerlink" href="#c.OS_WINDOWS" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Defined if OS is Windows. </p>
 </dd></dl>
 
@@ -206,19 +114,19 @@ because this macro won’t be defined. Use <a class="reference internal" href="#
 </div>
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.IS_OS_UNIX">
-<span class="target" id="macros_8h_1a67a39b6433b1f63b1a68527d9b07e169"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_UNIX</span></span></span><a class="headerlink" href="#c.IS_OS_UNIX" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="macros_8h_1a67a39b6433b1f63b1a68527d9b07e169"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_UNIX</span></span></span><a class="headerlink" href="#c.IS_OS_UNIX" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Set to 1 if OS is Unix-like, 0 otherwise. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.IS_OS_LINUX">
-<span class="target" id="macros_8h_1adfb0c3b3501ef57ec72fbd0a7940e0a7"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_LINUX</span></span></span><a class="headerlink" href="#c.IS_OS_LINUX" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="macros_8h_1adfb0c3b3501ef57ec72fbd0a7940e0a7"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_LINUX</span></span></span><a class="headerlink" href="#c.IS_OS_LINUX" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Set to 1 if OS is Linux, 0 otherwise. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.IS_OS_WINDOWS">
-<span class="target" id="macros_8h_1ac14557764a359e681c195c0b60ceedaa"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_WINDOWS</span></span></span><a class="headerlink" href="#c.IS_OS_WINDOWS" title="Permalink to this definition">¶</a><br /></dt>
+<span class="target" id="macros_8h_1ac14557764a359e681c195c0b60ceedaa"></span><span class="sig-name descname"><span class="n"><span class="pre">IS_OS_WINDOWS</span></span></span><a class="headerlink" href="#c.IS_OS_WINDOWS" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Set to 1 if OS is Windows, 0 otherwise. </p>
 </dd></dl>
 
@@ -245,22 +153,22 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 </div>
 </div>
 <div class="section" id="semantic-version">
-<h2>Semantic Version<a class="headerlink" href="#semantic-version" title="Permalink to this headline">¶</a></h2>
+<h2>Semantic Version<a class="headerlink" href="#semantic-version" title="Permalink to this headline"></a></h2>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv47version">
-<span id="_CPPv37version"></span><span id="_CPPv27version"></span><span id="version"></span><span class="target" id="structversion"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv47version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv37version"></span><span id="_CPPv27version"></span><span id="version"></span><span class="target" id="structversion"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv47version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Struct to represent semantic versioning. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7version7versionEjjj">
-<span id="_CPPv3N7version7versionEjjj"></span><span id="_CPPv2N7version7versionEjjj"></span><span id="version::version__unsigned.unsigned.unsignedCE"></span><span class="target" id="structversion_1acbee2dd3c47184c0b95541a7dfad383f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">major</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">minor</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">patch</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N7version7versionEjjj" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7version7versionEjjj"></span><span id="_CPPv2N7version7versionEjjj"></span><span id="version::version__unsigned.unsigned.unsignedCE"></span><span class="target" id="structversion_1acbee2dd3c47184c0b95541a7dfad383f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">major</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">minor</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">patch</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N7version7versionEjjj" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct version from major, minor and patch numbers. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N7version7versionENSt11string_viewE">
-<span id="_CPPv3N7version7versionENSt11string_viewE"></span><span id="_CPPv2N7version7versionENSt11string_viewE"></span><span id="version::version__std::string_viewCE"></span><span class="target" id="structversion_1ad4332f7da7dbf25c83dfecb20300a4c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N7version7versionENSt11string_viewE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7version7versionENSt11string_viewE"></span><span id="_CPPv2N7version7versionENSt11string_viewE"></span><span id="version::version__std::string_viewCE"></span><span class="target" id="structversion_1ad4332f7da7dbf25c83dfecb20300a4c2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string_view</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N7version7versionENSt11string_viewE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Construct version from string. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -275,43 +183,43 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7versioneqERK7version">
-<span id="_CPPv3NK7versioneqERK7version"></span><span id="_CPPv2NK7versioneqERK7version"></span><span id="version::eq-operator__versionCRCCE"></span><span class="target" id="structversion_1abe517d1198ea3776e7da8eb946c32bf2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versioneqERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7versioneqERK7version"></span><span id="_CPPv2NK7versioneqERK7version"></span><span id="version::eq-operator__versionCRCCE"></span><span class="target" id="structversion_1abe517d1198ea3776e7da8eb946c32bf2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">==</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versioneqERK7version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check version for equality. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7versionltERK7version">
-<span id="_CPPv3NK7versionltERK7version"></span><span id="_CPPv2NK7versionltERK7version"></span><span id="version::lt-operator__versionCRCCE"></span><span class="target" id="structversion_1a1642f840aa570a1abbb16c1930ba0aa5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionltERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7versionltERK7version"></span><span id="_CPPv2NK7versionltERK7version"></span><span id="version::lt-operator__versionCRCCE"></span><span class="target" id="structversion_1a1642f840aa570a1abbb16c1930ba0aa5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionltERK7version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check if version is less. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7versionleERK7version">
-<span id="_CPPv3NK7versionleERK7version"></span><span id="_CPPv2NK7versionleERK7version"></span><span id="version::lte-operator__versionCRCCE"></span><span class="target" id="structversion_1a60d9ed85a373f2dc56bdb8a251de3b41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionleERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7versionleERK7version"></span><span id="_CPPv2NK7versionleERK7version"></span><span id="version::lte-operator__versionCRCCE"></span><span class="target" id="structversion_1a60d9ed85a373f2dc56bdb8a251de3b41"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&lt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionleERK7version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check if version is less or equal. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7versiongtERK7version">
-<span id="_CPPv3NK7versiongtERK7version"></span><span id="_CPPv2NK7versiongtERK7version"></span><span id="version::gt-operator__versionCRCCE"></span><span class="target" id="structversion_1afa2248461a775fc23d0715ef6a50dc82"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versiongtERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7versiongtERK7version"></span><span id="_CPPv2NK7versiongtERK7version"></span><span id="version::gt-operator__versionCRCCE"></span><span class="target" id="structversion_1afa2248461a775fc23d0715ef6a50dc82"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versiongtERK7version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check if version is greater. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7versiongeERK7version">
-<span id="_CPPv3NK7versiongeERK7version"></span><span id="_CPPv2NK7versiongeERK7version"></span><span id="version::gte-operator__versionCRCCE"></span><span class="target" id="structversion_1a3f44e5674a063015c97b59134a308270"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versiongeERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7versiongeERK7version"></span><span id="_CPPv2NK7versiongeERK7version"></span><span id="version::gte-operator__versionCRCCE"></span><span class="target" id="structversion_1a3f44e5674a063015c97b59134a308270"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">&gt;=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versiongeERK7version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check if version is greater or equal. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7versionneERK7version">
-<span id="_CPPv3NK7versionneERK7version"></span><span id="_CPPv2NK7versionneERK7version"></span><span id="version::neq-operator__versionCRCCE"></span><span class="target" id="structversion_1a3430d43f67f6e3f3b76f6163c136e31a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionneERK7version" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7versionneERK7version"></span><span id="_CPPv2NK7versionneERK7version"></span><span id="version::neq-operator__versionCRCCE"></span><span class="target" id="structversion_1a3430d43f67f6e3f3b76f6163c136e31a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">!=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">rhs</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4NK7versionneERK7version" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check if version is not equal. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK7version3strEv">
-<span id="_CPPv3NK7version3strEv"></span><span id="_CPPv2NK7version3strEv"></span><span id="version::strC"></span><span class="target" id="structversion_1a569f9deaedeb0876540fde00ab52f51e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">str</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7version3strEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7version3strEv"></span><span id="_CPPv2NK7version3strEv"></span><span id="version::strC"></span><span class="target" id="structversion_1a569f9deaedeb0876540fde00ab52f51e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">str</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK7version3strEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get version string in format “major.minor.patch”. </p>
 </dd></dl>
 
@@ -320,19 +228,19 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7version5majorE">
-<span id="_CPPv3N7version5majorE"></span><span id="_CPPv2N7version5majorE"></span><span id="version::major__unsigned"></span><span class="target" id="structversion_1a0f59ecc10d68a05078e810c62aa0bc8c"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">major</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5majorE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7version5majorE"></span><span id="_CPPv2N7version5majorE"></span><span id="version::major__unsigned"></span><span class="target" id="structversion_1a0f59ecc10d68a05078e810c62aa0bc8c"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">major</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5majorE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Major version. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7version5minorE">
-<span id="_CPPv3N7version5minorE"></span><span id="_CPPv2N7version5minorE"></span><span id="version::minor__unsigned"></span><span class="target" id="structversion_1a8b2ab9f5dd56c6527d73bb1db9c93238"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5minorE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7version5minorE"></span><span id="_CPPv2N7version5minorE"></span><span id="version::minor__unsigned"></span><span class="target" id="structversion_1a8b2ab9f5dd56c6527d73bb1db9c93238"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">minor</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5minorE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Minor version. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N7version5patchE">
-<span id="_CPPv3N7version5patchE"></span><span id="_CPPv2N7version5patchE"></span><span id="version::patch__unsigned"></span><span class="target" id="structversion_1a823cb8466b33b40b6502c75acb5024c0"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">patch</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5patchE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7version5patchE"></span><span id="_CPPv2N7version5patchE"></span><span id="version::patch__unsigned"></span><span class="target" id="structversion_1a823cb8466b33b40b6502c75acb5024c0"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">patch</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span><a class="headerlink" href="#_CPPv4N7version5patchE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Patch or build version. </p>
 </dd></dl>
 
@@ -341,32 +249,32 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 </div>
 <div class="section" id="os-info">
-<h2>OS Info<a class="headerlink" href="#os-info" title="Permalink to this headline">¶</a></h2>
+<h2>OS Info<a class="headerlink" href="#os-info" title="Permalink to this headline"></a></h2>
 <dl class="cpp enum">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6type_tE">
-<span id="_CPPv3N2os6type_tE"></span><span id="_CPPv2N2os6type_tE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">type_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_tE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6type_tE"></span><span id="_CPPv2N2os6type_tE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">type_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_tE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Possible OS types. </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6type_t9undefinedE">
-<span id="_CPPv3N2os6type_t9undefinedE"></span><span id="_CPPv2N2os6type_t9undefinedE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41afbbb0a0a8dcb6bd6295067e22d38bbc4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">undefined</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t9undefinedE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6type_t9undefinedE"></span><span id="_CPPv2N2os6type_t9undefinedE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41afbbb0a0a8dcb6bd6295067e22d38bbc4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">undefined</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t9undefinedE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6type_t5linuxE">
-<span id="_CPPv3N2os6type_t5linuxE"></span><span id="_CPPv2N2os6type_t5linuxE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41af2429edd536fa302cfdf991dd078a73c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linux</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t5linuxE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6type_t5linuxE"></span><span id="_CPPv2N2os6type_t5linuxE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41af2429edd536fa302cfdf991dd078a73c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">linux</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t5linuxE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6type_t7windowsE">
-<span id="_CPPv3N2os6type_t7windowsE"></span><span id="_CPPv2N2os6type_t7windowsE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41a47e111c553e279e2fc797b346512e8af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windows</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t7windowsE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6type_t7windowsE"></span><span id="_CPPv2N2os6type_t7windowsE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41a47e111c553e279e2fc797b346512e8af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windows</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t7windowsE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os4typeEv">
-<span id="_CPPv3N2os4typeEv"></span><span id="_CPPv2N2os4typeEv"></span><span id="os::typeCE"></span><span class="target" id="info_8hpp_1ad4d1b587a420861d1e8343eb1c1ab5f6"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6type_tE" title="os::type_t"><span class="n"><span class="pre">type_t</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2os4typeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os4typeEv"></span><span id="_CPPv2N2os4typeEv"></span><span id="os::typeCE"></span><span class="target" id="info_8hpp_1ad4d1b587a420861d1e8343eb1c1ab5f6"></span><span class="k"><span class="pre">constexpr</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6type_tE" title="os::type_t"><span class="n"><span class="pre">type_t</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">noexcept</span></span><a class="headerlink" href="#_CPPv4N2os4typeEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get type of OS at compile time. </p>
 </dd></dl>
 
@@ -379,7 +287,7 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 </div>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os4nameEv">
-<span id="_CPPv3N2os4nameEv"></span><span id="_CPPv2N2os4nameEv"></span><span id="os::name"></span><span class="target" id="info_8hpp_1ab37e305cbdb16d18da83aca339edb0d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os4nameEv"></span><span id="_CPPv2N2os4nameEv"></span><span id="os::name"></span><span class="target" id="info_8hpp_1ab37e305cbdb16d18da83aca339edb0d7"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4nameEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS name. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -398,13 +306,13 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os11pretty_nameEv">
-<span id="_CPPv3N2os11pretty_nameEv"></span><span id="_CPPv2N2os11pretty_nameEv"></span><span id="os::pretty_name"></span><span class="target" id="info_8hpp_1a15d3270296e79943b444bd364b4d6bc8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pretty_name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os11pretty_nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os11pretty_nameEv"></span><span id="_CPPv2N2os11pretty_nameEv"></span><span id="os::pretty_name"></span><span class="target" id="info_8hpp_1a15d3270296e79943b444bd364b4d6bc8"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pretty_name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os11pretty_nameEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS name with version. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8codenameEv">
-<span id="_CPPv3N2os8codenameEv"></span><span id="_CPPv2N2os8codenameEv"></span><span id="os::codename"></span><span class="target" id="info_8hpp_1aaff212587176a844878d09000bac05c5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">codename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8codenameEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8codenameEv"></span><span id="_CPPv2N2os8codenameEv"></span><span id="os::codename"></span><span class="target" id="info_8hpp_1aaff212587176a844878d09000bac05c5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">codename</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8codenameEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS codename. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -419,55 +327,55 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os7versionEv">
-<span id="_CPPv3N2os7versionEv"></span><span id="_CPPv2N2os7versionEv"></span><span id="os::version"></span><span class="target" id="info_8hpp_1a95122cb32d80c25c07a245cef3fb9d6b"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os7versionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os7versionEv"></span><span id="_CPPv2N2os7versionEv"></span><span id="os::version"></span><span class="target" id="info_8hpp_1a95122cb32d80c25c07a245cef3fb9d6b"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os7versionEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS major, minor and patch version as integers. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os14version_stringEv">
-<span id="_CPPv3N2os14version_stringEv"></span><span id="_CPPv2N2os14version_stringEv"></span><span id="os::version_string"></span><span class="target" id="info_8hpp_1afdb158bf490211580a8bdd948ee1234f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os14version_stringEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os14version_stringEv"></span><span id="_CPPv2N2os14version_stringEv"></span><span id="os::version_string"></span><span class="target" id="info_8hpp_1afdb158bf490211580a8bdd948ee1234f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os14version_stringEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS version as string. </p>
 </dd></dl>
 
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_tE">
-<span id="_CPPv3N2os6info_tE"></span><span id="_CPPv2N2os6info_tE"></span><span id="os::info_t"></span><span class="target" id="structos_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_tE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_tE"></span><span id="_CPPv2N2os6info_tE"></span><span id="os::info_t"></span><span class="target" id="structos_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_tE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Full OS info. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_t4typeE">
-<span id="_CPPv3N2os6info_t4typeE"></span><span id="_CPPv2N2os6info_t4typeE"></span><span id="os::info_t::type__type_t"></span><span class="target" id="structos_1_1info__t_1a248c9bf156b08a522c0ee16b37177110"></span><a class="reference internal" href="#_CPPv4N2os6type_tE" title="os::type_t"><span class="n"><span class="pre">type_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N2os6type_t9undefinedE" title="os::undefined"><span class="n"><span class="pre">undefined</span></span></a><a class="headerlink" href="#_CPPv4N2os6info_t4typeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_t4typeE"></span><span id="_CPPv2N2os6info_t4typeE"></span><span id="os::info_t::type__type_t"></span><span class="target" id="structos_1_1info__t_1a248c9bf156b08a522c0ee16b37177110"></span><a class="reference internal" href="#_CPPv4N2os6type_tE" title="os::type_t"><span class="n"><span class="pre">type_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">type</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv4N2os6type_t9undefinedE" title="os::undefined"><span class="n"><span class="pre">undefined</span></span></a><a class="headerlink" href="#_CPPv4N2os6info_t4typeE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS type. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_t4nameE">
-<span id="_CPPv3N2os6info_t4nameE"></span><span id="_CPPv2N2os6info_t4nameE"></span><span id="os::info_t::name__ss"></span><span class="target" id="structos_1_1info__t_1adf8240fca09ca9ed06dc49a157e7b2ca"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_t4nameE"></span><span id="_CPPv2N2os6info_t4nameE"></span><span id="os::info_t::name__ss"></span><span class="target" id="structos_1_1info__t_1adf8240fca09ca9ed06dc49a157e7b2ca"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t4nameE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS name. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_t11pretty_nameE">
-<span id="_CPPv3N2os6info_t11pretty_nameE"></span><span id="_CPPv2N2os6info_t11pretty_nameE"></span><span id="os::info_t::pretty_name__ss"></span><span class="target" id="structos_1_1info__t_1ade3789e31dd6a74146d6ef849332cde0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pretty_name</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t11pretty_nameE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_t11pretty_nameE"></span><span id="_CPPv2N2os6info_t11pretty_nameE"></span><span id="os::info_t::pretty_name__ss"></span><span class="target" id="structos_1_1info__t_1ade3789e31dd6a74146d6ef849332cde0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pretty_name</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t11pretty_nameE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS name with version. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_t8codenameE">
-<span id="_CPPv3N2os6info_t8codenameE"></span><span id="_CPPv2N2os6info_t8codenameE"></span><span id="os::info_t::codename__ss"></span><span class="target" id="structos_1_1info__t_1a85ccaaffe6c1b811f41cca7069cca41f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">codename</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t8codenameE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_t8codenameE"></span><span id="_CPPv2N2os6info_t8codenameE"></span><span id="os::info_t::codename__ss"></span><span class="target" id="structos_1_1info__t_1a85ccaaffe6c1b811f41cca7069cca41f"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">codename</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t8codenameE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS codename (if exists) </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_t7versionE">
-<span id="_CPPv3N2os6info_t7versionE"></span><span id="_CPPv2N2os6info_t7versionE"></span><span id="os::info_t::version__version"></span><span class="target" id="structos_1_1info__t_1a12ac81e0f031bd8cfc480a00fb6d2c78"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t7versionE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_t7versionE"></span><span id="_CPPv2N2os6info_t7versionE"></span><span id="os::info_t::version__version"></span><span class="target" id="structos_1_1info__t_1a12ac81e0f031bd8cfc480a00fb6d2c78"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t7versionE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS major, minor and patch version as integers. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6info_t14version_stringE">
-<span id="_CPPv3N2os6info_t14version_stringE"></span><span id="_CPPv2N2os6info_t14version_stringE"></span><span id="os::info_t::version_string__ss"></span><span class="target" id="structos_1_1info__t_1af02d7449d866c4a83a7527e3741d2ba0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t14version_stringE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6info_t14version_stringE"></span><span id="_CPPv2N2os6info_t14version_stringE"></span><span id="os::info_t::version_string__ss"></span><span class="target" id="structos_1_1info__t_1af02d7449d866c4a83a7527e3741d2ba0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><a class="headerlink" href="#_CPPv4N2os6info_t14version_stringE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS version as string. </p>
 </dd></dl>
 
@@ -476,7 +384,7 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os4infoEv">
-<span id="_CPPv3N2os4infoEv"></span><span id="_CPPv2N2os4infoEv"></span><span id="os::info"></span><span class="target" id="info_8hpp_1ac2176cd9849a424260f3fbd5c7c1f74b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6info_tE" title="os::info_t"><span class="n"><span class="pre">info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os4infoEv"></span><span id="_CPPv2N2os4infoEv"></span><span id="os::info"></span><span class="target" id="info_8hpp_1ac2176cd9849a424260f3fbd5c7c1f74b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6info_tE" title="os::info_t"><span class="n"><span class="pre">info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os4infoEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get full OS info. </p>
 <p>Obtaining OS info is very expensive. Hence, it’s statically allocated and read exactly once.</p>
 <dl class="field-list simple">
@@ -488,10 +396,10 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 </div>
 <div class="section" id="kernel-info">
-<h2>Kernel Info<a class="headerlink" href="#kernel-info" title="Permalink to this headline">¶</a></h2>
+<h2>Kernel Info<a class="headerlink" href="#kernel-info" title="Permalink to this headline"></a></h2>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel4nameEv">
-<span id="_CPPv3N2os6kernel4nameEv"></span><span id="_CPPv2N2os6kernel4nameEv"></span><span id="os::kernel::name"></span><span class="target" id="kernel_8hpp_1ab9888df0e61bad13cbfcd7954b2cc8a5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel4nameEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel4nameEv"></span><span id="_CPPv2N2os6kernel4nameEv"></span><span id="os::kernel::name"></span><span class="target" id="kernel_8hpp_1ab9888df0e61bad13cbfcd7954b2cc8a5"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel4nameEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS Kernel name. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -506,37 +414,37 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel7versionEv">
-<span id="_CPPv3N2os6kernel7versionEv"></span><span id="_CPPv2N2os6kernel7versionEv"></span><span id="os::kernel::version"></span><span class="target" id="kernel_8hpp_1a848494710e325487bee94aa74d5722b7"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel7versionEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel7versionEv"></span><span id="_CPPv2N2os6kernel7versionEv"></span><span id="os::kernel::version"></span><span class="target" id="kernel_8hpp_1a848494710e325487bee94aa74d5722b7"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel7versionEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS Kernel major, minor and patch version as integers. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel14version_stringEv">
-<span id="_CPPv3N2os6kernel14version_stringEv"></span><span id="_CPPv2N2os6kernel14version_stringEv"></span><span id="os::kernel::version_string"></span><span class="target" id="kernel_8hpp_1a9a78528bb9117dc5190f0a36ddf2466b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel14version_stringEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel14version_stringEv"></span><span id="_CPPv2N2os6kernel14version_stringEv"></span><span id="os::kernel::version_string"></span><span class="target" id="kernel_8hpp_1a9a78528bb9117dc5190f0a36ddf2466b"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel14version_stringEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get OS Kernel version as string. </p>
 </dd></dl>
 
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel6info_tE">
-<span id="_CPPv3N2os6kernel6info_tE"></span><span id="_CPPv2N2os6kernel6info_tE"></span><span id="os::kernel::info_t"></span><span class="target" id="structos_1_1kernel_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_tE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel6info_tE"></span><span id="_CPPv2N2os6kernel6info_tE"></span><span id="os::kernel::info_t"></span><span class="target" id="structos_1_1kernel_1_1info__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info_t</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_tE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Full OS Kernel info. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel6info_t4nameE">
-<span id="_CPPv3N2os6kernel6info_t4nameE"></span><span id="_CPPv2N2os6kernel6info_t4nameE"></span><span id="os::kernel::info_t::name__ss"></span><span class="target" id="structos_1_1kernel_1_1info__t_1a0c15d9ebbe0bbc1769b1cdd588d019e9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_t4nameE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel6info_t4nameE"></span><span id="_CPPv2N2os6kernel6info_t4nameE"></span><span id="os::kernel::info_t::name__ss"></span><span class="target" id="structos_1_1kernel_1_1info__t_1a0c15d9ebbe0bbc1769b1cdd588d019e9"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_t4nameE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS Kernel name. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel6info_t7versionE">
-<span id="_CPPv3N2os6kernel6info_t7versionE"></span><span id="_CPPv2N2os6kernel6info_t7versionE"></span><span id="os::kernel::info_t::version__version"></span><span class="target" id="structos_1_1kernel_1_1info__t_1afe3bf951c44e38bbeed996e5fc6c2dda"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_t7versionE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel6info_t7versionE"></span><span id="_CPPv2N2os6kernel6info_t7versionE"></span><span id="os::kernel::info_t::version__version"></span><span class="target" id="structos_1_1kernel_1_1info__t_1afe3bf951c44e38bbeed996e5fc6c2dda"></span><span class="p"><span class="pre">::</span></span><a class="reference internal" href="#_CPPv47version" title="version"><span class="n"><span class="pre">version</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_t7versionE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS Kernel major, minor and patch version as integers. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel6info_t14version_stringE">
-<span id="_CPPv3N2os6kernel6info_t14version_stringE"></span><span id="_CPPv2N2os6kernel6info_t14version_stringE"></span><span id="os::kernel::info_t::version_string__ss"></span><span class="target" id="structos_1_1kernel_1_1info__t_1a654cc2d4b8f73fd26d7b7a70d7407f14"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_t14version_stringE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel6info_t14version_stringE"></span><span id="_CPPv2N2os6kernel6info_t14version_stringE"></span><span id="os::kernel::info_t::version_string__ss"></span><span class="target" id="structos_1_1kernel_1_1info__t_1a654cc2d4b8f73fd26d7b7a70d7407f14"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">version_string</span></span></span><a class="headerlink" href="#_CPPv4N2os6kernel6info_t14version_stringE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>OS Kernel version as string. </p>
 </dd></dl>
 
@@ -545,7 +453,7 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os6kernel4infoEv">
-<span id="_CPPv3N2os6kernel4infoEv"></span><span id="_CPPv2N2os6kernel4infoEv"></span><span id="os::kernel::info"></span><span class="target" id="kernel_8hpp_1addf67bf04b87073e9ecd54f9bf063da5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6kernel6info_tE" title="os::kernel::info_t"><span class="n"><span class="pre">info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel4infoEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os6kernel4infoEv"></span><span id="_CPPv2N2os6kernel4infoEv"></span><span id="os::kernel::info"></span><span class="target" id="kernel_8hpp_1addf67bf04b87073e9ecd54f9bf063da5"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os6kernel6info_tE" title="os::kernel::info_t"><span class="n"><span class="pre">info_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">kernel</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">info</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os6kernel4infoEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get full OS Kernel info. </p>
 <p>Obtaining OS Kernel info is very expensive. Hence, it’s statically allocated and read exactly once.</p>
 <dl class="field-list simple">
@@ -557,10 +465,10 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 
 </div>
 <div class="section" id="keyboard-input">
-<h2>Keyboard Input<a class="headerlink" href="#keyboard-input" title="Permalink to this headline">¶</a></h2>
+<h2>Keyboard Input<a class="headerlink" href="#keyboard-input" title="Permalink to this headline"></a></h2>
 <dl class="cpp enum">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vkE">
-<span id="_CPPv3N2os8keyboard2vkE"></span><span id="_CPPv2N2os8keyboard2vkE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0d"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">vk</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vkE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vkE"></span><span id="_CPPv2N2os8keyboard2vkE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0d"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">vk</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vkE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Virtual keys. </p>
 <p>Virtual-key code is a device-independent value defined by the system that identifies the purpose of a key. The output of sending a virtual key is affected by current keyboard layout and mapping.</p>
 <div class="admonition note">
@@ -570,247 +478,247 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_0E">
-<span id="_CPPv3N2os8keyboard2vk5Key_0E"></span><span id="_CPPv2N2os8keyboard2vk5Key_0E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da04d3273dce36fcab516ea1694b9583c0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_0</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_0E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_0E"></span><span id="_CPPv2N2os8keyboard2vk5Key_0E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da04d3273dce36fcab516ea1694b9583c0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_0</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_0E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_1E">
-<span id="_CPPv3N2os8keyboard2vk5Key_1E"></span><span id="_CPPv2N2os8keyboard2vk5Key_1E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da7008dae6e21bba9332daab92d829dbda"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_1</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_1E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_1E"></span><span id="_CPPv2N2os8keyboard2vk5Key_1E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da7008dae6e21bba9332daab92d829dbda"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_1</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_1E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_2E">
-<span id="_CPPv3N2os8keyboard2vk5Key_2E"></span><span id="_CPPv2N2os8keyboard2vk5Key_2E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da1dfb488fdab3fb75cc0a5e371580ccab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_2</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_2E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_2E"></span><span id="_CPPv2N2os8keyboard2vk5Key_2E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da1dfb488fdab3fb75cc0a5e371580ccab"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_2</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_2E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_3E">
-<span id="_CPPv3N2os8keyboard2vk5Key_3E"></span><span id="_CPPv2N2os8keyboard2vk5Key_3E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da8bb9b4775309e87d73b444c5f88deb36"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_3</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_3E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_3E"></span><span id="_CPPv2N2os8keyboard2vk5Key_3E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da8bb9b4775309e87d73b444c5f88deb36"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_3</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_3E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_4E">
-<span id="_CPPv3N2os8keyboard2vk5Key_4E"></span><span id="_CPPv2N2os8keyboard2vk5Key_4E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5352c75d225b1aff21b207d4b78b9948"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_4</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_4E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_4E"></span><span id="_CPPv2N2os8keyboard2vk5Key_4E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5352c75d225b1aff21b207d4b78b9948"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_4</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_4E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_5E">
-<span id="_CPPv3N2os8keyboard2vk5Key_5E"></span><span id="_CPPv2N2os8keyboard2vk5Key_5E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad9148b6f011a15c4f0818ad1f4d6f8b3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_5</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_5E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_5E"></span><span id="_CPPv2N2os8keyboard2vk5Key_5E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad9148b6f011a15c4f0818ad1f4d6f8b3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_5</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_5E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_6E">
-<span id="_CPPv3N2os8keyboard2vk5Key_6E"></span><span id="_CPPv2N2os8keyboard2vk5Key_6E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da301d1361703503a70567938b519070e1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_6</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_6E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_6E"></span><span id="_CPPv2N2os8keyboard2vk5Key_6E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da301d1361703503a70567938b519070e1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_6</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_6E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_7E">
-<span id="_CPPv3N2os8keyboard2vk5Key_7E"></span><span id="_CPPv2N2os8keyboard2vk5Key_7E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da179f94272580cbc69b0f5fddced1ce2f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_7</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_7E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_7E"></span><span id="_CPPv2N2os8keyboard2vk5Key_7E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da179f94272580cbc69b0f5fddced1ce2f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_7</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_7E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_8E">
-<span id="_CPPv3N2os8keyboard2vk5Key_8E"></span><span id="_CPPv2N2os8keyboard2vk5Key_8E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da732ca0da2d4f9db51ed9507f7b10bc1a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_8</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_8E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_8E"></span><span id="_CPPv2N2os8keyboard2vk5Key_8E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da732ca0da2d4f9db51ed9507f7b10bc1a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_8</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_8E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5Key_9E">
-<span id="_CPPv3N2os8keyboard2vk5Key_9E"></span><span id="_CPPv2N2os8keyboard2vk5Key_9E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daae4461c07901b9f7b3d8bbdbc3445baa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_9</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_9E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5Key_9E"></span><span id="_CPPv2N2os8keyboard2vk5Key_9E"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daae4461c07901b9f7b3d8bbdbc3445baa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Key_9</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5Key_9E" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1AE">
-<span id="_CPPv3N2os8keyboard2vk1AE"></span><span id="_CPPv2N2os8keyboard2vk1AE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da7fc56270e7a70fa81a5935b72eacbe29"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">A</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1AE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1AE"></span><span id="_CPPv2N2os8keyboard2vk1AE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da7fc56270e7a70fa81a5935b72eacbe29"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">A</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1AE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1BE">
-<span id="_CPPv3N2os8keyboard2vk1BE"></span><span id="_CPPv2N2os8keyboard2vk1BE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da9d5ed678fe57bcca610140957afab571"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">B</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1BE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1BE"></span><span id="_CPPv2N2os8keyboard2vk1BE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da9d5ed678fe57bcca610140957afab571"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">B</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1BE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1CE">
-<span id="_CPPv3N2os8keyboard2vk1CE"></span><span id="_CPPv2N2os8keyboard2vk1CE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da0d61f8370cad1d412f80b84d143e1257"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">C</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1CE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1CE"></span><span id="_CPPv2N2os8keyboard2vk1CE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da0d61f8370cad1d412f80b84d143e1257"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">C</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1CE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1DE">
-<span id="_CPPv3N2os8keyboard2vk1DE"></span><span id="_CPPv2N2os8keyboard2vk1DE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf623e75af30e62bbd73d6df5b50bb7b5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">D</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1DE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1DE"></span><span id="_CPPv2N2os8keyboard2vk1DE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf623e75af30e62bbd73d6df5b50bb7b5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">D</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1DE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1EE">
-<span id="_CPPv3N2os8keyboard2vk1EE"></span><span id="_CPPv2N2os8keyboard2vk1EE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da3a3ea00cfc35332cedf6e5e9a32e94da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">E</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1EE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1EE"></span><span id="_CPPv2N2os8keyboard2vk1EE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da3a3ea00cfc35332cedf6e5e9a32e94da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">E</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1EE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1FE">
-<span id="_CPPv3N2os8keyboard2vk1FE"></span><span id="_CPPv2N2os8keyboard2vk1FE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da800618943025315f869e4e1f09471012"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1FE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1FE"></span><span id="_CPPv2N2os8keyboard2vk1FE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da800618943025315f869e4e1f09471012"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">F</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1FE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1GE">
-<span id="_CPPv3N2os8keyboard2vk1GE"></span><span id="_CPPv2N2os8keyboard2vk1GE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dadfcf28d0734569a6a693bc8194de62bf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">G</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1GE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1GE"></span><span id="_CPPv2N2os8keyboard2vk1GE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dadfcf28d0734569a6a693bc8194de62bf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">G</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1GE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1HE">
-<span id="_CPPv3N2os8keyboard2vk1HE"></span><span id="_CPPv2N2os8keyboard2vk1HE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dac1d9f50f86825a1a2302ec2449c17196"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">H</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1HE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1HE"></span><span id="_CPPv2N2os8keyboard2vk1HE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dac1d9f50f86825a1a2302ec2449c17196"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">H</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1HE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1IE">
-<span id="_CPPv3N2os8keyboard2vk1IE"></span><span id="_CPPv2N2os8keyboard2vk1IE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dadd7536794b63bf90eccfd37f9b147d7f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1IE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1IE"></span><span id="_CPPv2N2os8keyboard2vk1IE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dadd7536794b63bf90eccfd37f9b147d7f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">I</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1IE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1JE">
-<span id="_CPPv3N2os8keyboard2vk1JE"></span><span id="_CPPv2N2os8keyboard2vk1JE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daff44570aca8241914870afbc310cdb85"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">J</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1JE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1JE"></span><span id="_CPPv2N2os8keyboard2vk1JE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daff44570aca8241914870afbc310cdb85"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">J</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1JE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1KE">
-<span id="_CPPv3N2os8keyboard2vk1KE"></span><span id="_CPPv2N2os8keyboard2vk1KE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa5f3c6a11b03839d46af9fb43c97c188"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">K</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1KE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1KE"></span><span id="_CPPv2N2os8keyboard2vk1KE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa5f3c6a11b03839d46af9fb43c97c188"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">K</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1KE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1LE">
-<span id="_CPPv3N2os8keyboard2vk1LE"></span><span id="_CPPv2N2os8keyboard2vk1LE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad20caec3b48a1eef164cb4ca81ba2587"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">L</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1LE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1LE"></span><span id="_CPPv2N2os8keyboard2vk1LE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad20caec3b48a1eef164cb4ca81ba2587"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">L</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1LE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1ME">
-<span id="_CPPv3N2os8keyboard2vk1ME"></span><span id="_CPPv2N2os8keyboard2vk1ME"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da69691c7bdcc3ce6d5d8a1361f22d04ac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1ME" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1ME"></span><span id="_CPPv2N2os8keyboard2vk1ME"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da69691c7bdcc3ce6d5d8a1361f22d04ac"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">M</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1ME" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1NE">
-<span id="_CPPv3N2os8keyboard2vk1NE"></span><span id="_CPPv2N2os8keyboard2vk1NE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da8d9c307cb7f3c4a32822a51922d1ceaa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1NE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1NE"></span><span id="_CPPv2N2os8keyboard2vk1NE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da8d9c307cb7f3c4a32822a51922d1ceaa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">N</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1NE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1OE">
-<span id="_CPPv3N2os8keyboard2vk1OE"></span><span id="_CPPv2N2os8keyboard2vk1OE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf186217753c37b9b9f958d906208506e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">O</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1OE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1OE"></span><span id="_CPPv2N2os8keyboard2vk1OE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf186217753c37b9b9f958d906208506e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">O</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1OE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1PE">
-<span id="_CPPv3N2os8keyboard2vk1PE"></span><span id="_CPPv2N2os8keyboard2vk1PE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da44c29edb103a2872f519ad0c9a0fdaaa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">P</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1PE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1PE"></span><span id="_CPPv2N2os8keyboard2vk1PE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da44c29edb103a2872f519ad0c9a0fdaaa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">P</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1PE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1QE">
-<span id="_CPPv3N2os8keyboard2vk1QE"></span><span id="_CPPv2N2os8keyboard2vk1QE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf09564c9ca56850d4cd6b3319e541aee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1QE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1QE"></span><span id="_CPPv2N2os8keyboard2vk1QE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf09564c9ca56850d4cd6b3319e541aee"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Q</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1QE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1RE">
-<span id="_CPPv3N2os8keyboard2vk1RE"></span><span id="_CPPv2N2os8keyboard2vk1RE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dae1e1d3d40573127e9ee0480caf1283d6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1RE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1RE"></span><span id="_CPPv2N2os8keyboard2vk1RE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dae1e1d3d40573127e9ee0480caf1283d6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">R</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1RE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1SE">
-<span id="_CPPv3N2os8keyboard2vk1SE"></span><span id="_CPPv2N2os8keyboard2vk1SE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5dbc98dcc983a70728bd082d1a47546e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1SE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1SE"></span><span id="_CPPv2N2os8keyboard2vk1SE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5dbc98dcc983a70728bd082d1a47546e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">S</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1SE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1TE">
-<span id="_CPPv3N2os8keyboard2vk1TE"></span><span id="_CPPv2N2os8keyboard2vk1TE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dab9ece18c950afbfa6b0fdbfa4ff731d3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1TE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1TE"></span><span id="_CPPv2N2os8keyboard2vk1TE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dab9ece18c950afbfa6b0fdbfa4ff731d3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1TE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1UE">
-<span id="_CPPv3N2os8keyboard2vk1UE"></span><span id="_CPPv2N2os8keyboard2vk1UE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da4c614360da93c0a041b22e537de151eb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1UE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1UE"></span><span id="_CPPv2N2os8keyboard2vk1UE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da4c614360da93c0a041b22e537de151eb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">U</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1UE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1VE">
-<span id="_CPPv3N2os8keyboard2vk1VE"></span><span id="_CPPv2N2os8keyboard2vk1VE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5206560a306a2e085a437fd258eb57ce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">V</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1VE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1VE"></span><span id="_CPPv2N2os8keyboard2vk1VE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5206560a306a2e085a437fd258eb57ce"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">V</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1VE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1WE">
-<span id="_CPPv3N2os8keyboard2vk1WE"></span><span id="_CPPv2N2os8keyboard2vk1WE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da61e9c06ea9a85a5088a499df6458d276"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">W</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1WE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1WE"></span><span id="_CPPv2N2os8keyboard2vk1WE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da61e9c06ea9a85a5088a499df6458d276"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">W</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1WE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1XE">
-<span id="_CPPv3N2os8keyboard2vk1XE"></span><span id="_CPPv2N2os8keyboard2vk1XE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da02129bb861061d1a052c592e2dc6b383"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">X</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1XE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1XE"></span><span id="_CPPv2N2os8keyboard2vk1XE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da02129bb861061d1a052c592e2dc6b383"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">X</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1XE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1YE">
-<span id="_CPPv3N2os8keyboard2vk1YE"></span><span id="_CPPv2N2os8keyboard2vk1YE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da57cec4137b614c87cb4e24a3d003a3e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Y</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1YE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1YE"></span><span id="_CPPv2N2os8keyboard2vk1YE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da57cec4137b614c87cb4e24a3d003a3e0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Y</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1YE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk1ZE">
-<span id="_CPPv3N2os8keyboard2vk1ZE"></span><span id="_CPPv2N2os8keyboard2vk1ZE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da21c2e59531c8710156d34a3c30ac81d5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Z</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1ZE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk1ZE"></span><span id="_CPPv2N2os8keyboard2vk1ZE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da21c2e59531c8710156d34a3c30ac81d5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Z</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk1ZE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5SpaceE">
-<span id="_CPPv3N2os8keyboard2vk5SpaceE"></span><span id="_CPPv2N2os8keyboard2vk5SpaceE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad511f8439ecde36647437fbba67a4394"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Space</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5SpaceE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5SpaceE"></span><span id="_CPPv2N2os8keyboard2vk5SpaceE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad511f8439ecde36647437fbba67a4394"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Space</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5SpaceE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5ShiftE">
-<span id="_CPPv3N2os8keyboard2vk5ShiftE"></span><span id="_CPPv2N2os8keyboard2vk5ShiftE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da825a3d98017bab11815ad2817201324c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Shift</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5ShiftE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5ShiftE"></span><span id="_CPPv2N2os8keyboard2vk5ShiftE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da825a3d98017bab11815ad2817201324c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Shift</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5ShiftE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk7ControlE">
-<span id="_CPPv3N2os8keyboard2vk7ControlE"></span><span id="_CPPv2N2os8keyboard2vk7ControlE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa1595abbb4c3a326636dd178757cd6c1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Control</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk7ControlE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk7ControlE"></span><span id="_CPPv2N2os8keyboard2vk7ControlE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa1595abbb4c3a326636dd178757cd6c1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Control</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk7ControlE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk4CtrlE">
-<span id="_CPPv3N2os8keyboard2vk4CtrlE"></span><span id="_CPPv2N2os8keyboard2vk4CtrlE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da2b61e0d5977f2e38f06e16281c802b47"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Ctrl</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk4CtrlE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk4CtrlE"></span><span id="_CPPv2N2os8keyboard2vk4CtrlE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da2b61e0d5977f2e38f06e16281c802b47"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Ctrl</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk4CtrlE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk4CapsE">
-<span id="_CPPv3N2os8keyboard2vk4CapsE"></span><span id="_CPPv2N2os8keyboard2vk4CapsE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da55dd587cdc4a278be6a5c37f9e539de1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Caps</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk4CapsE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk4CapsE"></span><span id="_CPPv2N2os8keyboard2vk4CapsE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da55dd587cdc4a278be6a5c37f9e539de1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Caps</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk4CapsE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3AltE">
-<span id="_CPPv3N2os8keyboard2vk3AltE"></span><span id="_CPPv2N2os8keyboard2vk3AltE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa2e92861b757ab878312dd57993d60cf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Alt</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3AltE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk3AltE"></span><span id="_CPPv2N2os8keyboard2vk3AltE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa2e92861b757ab878312dd57993d60cf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Alt</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3AltE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5SuperE">
-<span id="_CPPv3N2os8keyboard2vk5SuperE"></span><span id="_CPPv2N2os8keyboard2vk5SuperE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da0ce3266d4eb71ad50f7a90aee6d21dcd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Super</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5SuperE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5SuperE"></span><span id="_CPPv2N2os8keyboard2vk5SuperE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da0ce3266d4eb71ad50f7a90aee6d21dcd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Super</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5SuperE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3WinE">
-<span id="_CPPv3N2os8keyboard2vk3WinE"></span><span id="_CPPv2N2os8keyboard2vk3WinE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da119eac47719cc9be7b99124712e229da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Win</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3WinE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk3WinE"></span><span id="_CPPv2N2os8keyboard2vk3WinE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da119eac47719cc9be7b99124712e229da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Win</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3WinE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk7CommandE">
-<span id="_CPPv3N2os8keyboard2vk7CommandE"></span><span id="_CPPv2N2os8keyboard2vk7CommandE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daee97be03cb04119af45014d815621ce1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Command</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk7CommandE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk7CommandE"></span><span id="_CPPv2N2os8keyboard2vk7CommandE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daee97be03cb04119af45014d815621ce1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Command</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk7CommandE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3CmdE">
-<span id="_CPPv3N2os8keyboard2vk3CmdE"></span><span id="_CPPv2N2os8keyboard2vk3CmdE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dab5272fc6223db73c6f142bfa552c70f8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Cmd</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3CmdE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk3CmdE"></span><span id="_CPPv2N2os8keyboard2vk3CmdE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dab5272fc6223db73c6f142bfa552c70f8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Cmd</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3CmdE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5EnterE">
-<span id="_CPPv3N2os8keyboard2vk5EnterE"></span><span id="_CPPv2N2os8keyboard2vk5EnterE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf1851d5600eae616ee802a31ac74701b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Enter</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5EnterE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk5EnterE"></span><span id="_CPPv2N2os8keyboard2vk5EnterE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daf1851d5600eae616ee802a31ac74701b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Enter</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5EnterE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3EscE">
-<span id="_CPPv3N2os8keyboard2vk3EscE"></span><span id="_CPPv2N2os8keyboard2vk3EscE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da91f4253ca587ca8ac4e63b9ceb351f5d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Esc</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3EscE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk3EscE"></span><span id="_CPPv2N2os8keyboard2vk3EscE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da91f4253ca587ca8ac4e63b9ceb351f5d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Esc</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3EscE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3DelE">
-<span id="_CPPv3N2os8keyboard2vk3DelE"></span><span id="_CPPv2N2os8keyboard2vk3DelE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5526d60feb55086fbd12dd96b071a093"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Del</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3DelE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard2vk3DelE"></span><span id="_CPPv2N2os8keyboard2vk3DelE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da5526d60feb55086fbd12dd96b071a093"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Del</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3DelE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -826,31 +734,31 @@ of <a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyb
 </div>
 <dl class="cpp struct">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard11combinationE">
-<span id="_CPPv3N2os8keyboard11combinationE"></span><span id="_CPPv2N2os8keyboard11combinationE"></span><span id="os::keyboard::combination"></span><span class="target" id="structos_1_1keyboard_1_1combination"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">combination</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard11combinationE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard11combinationE"></span><span id="_CPPv2N2os8keyboard11combinationE"></span><span id="os::keyboard::combination"></span><span class="target" id="structos_1_1keyboard_1_1combination"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">combination</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard11combinationE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Combination of keys. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard11combination11combinationE2vk">
-<span id="_CPPv3N2os8keyboard11combination11combinationE2vk"></span><span id="_CPPv2N2os8keyboard11combination11combinationE2vk"></span><span id="os::keyboard::combination::combination__vk"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ac0076d8a3d670822556dbee64c7b55d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination11combinationE2vk" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard11combination11combinationE2vk"></span><span id="_CPPv2N2os8keyboard11combination11combinationE2vk"></span><span id="os::keyboard::combination::combination__vk"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ac0076d8a3d670822556dbee64c7b55d1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">key</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination11combinationE2vk" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Make combination from virtual keys. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE">
-<span id="_CPPv3N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE"></span><span id="_CPPv2N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE"></span><span id="os::keyboard::combination::combination__std::initializer_list:vk:"></span><span class="target" id="structos_1_1keyboard_1_1combination_1a0b1e9005445d51b8b31e5ab5cf4fd687"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keys</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE"></span><span id="_CPPv2N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE"></span><span id="os::keyboard::combination::combination__std::initializer_list:vk:"></span><span class="target" id="structos_1_1keyboard_1_1combination_1a0b1e9005445d51b8b31e5ab5cf4fd687"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">combination</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">initializer_list</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">keys</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="p"><span class="pre">{</span></span><span class="p"><span class="pre">}</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination11combinationENSt16initializer_listI2vkEE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Make combination from list of virtual keys. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard11combinationpLERK11combination">
-<span id="_CPPv3N2os8keyboard11combinationpLERK11combination"></span><span id="_CPPv2N2os8keyboard11combinationpLERK11combination"></span><span id="os::keyboard::combination::add-assign-operator__combinationCR"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ac35aa49b4cdc9537b5e0ff78dabe0dfa"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">+=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard11combinationpLERK11combination" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard11combinationpLERK11combination"></span><span id="_CPPv2N2os8keyboard11combinationpLERK11combination"></span><span id="os::keyboard::combination::add-assign-operator__combinationCR"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ac35aa49b4cdc9537b5e0ff78dabe0dfa"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">+=</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard11combinationpLERK11combination" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Append a combination. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4NK2os8keyboard11combinationplERK11combination">
-<span id="_CPPv3NK2os8keyboard11combinationplERK11combination"></span><span id="_CPPv2NK2os8keyboard11combinationplERK11combination"></span><span id="os::keyboard::combination::add-operator__combinationCRC"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ad72c5beb4a4d4b059e68c8ee8462d3f6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">+</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2os8keyboard11combinationplERK11combination" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK2os8keyboard11combinationplERK11combination"></span><span id="_CPPv2NK2os8keyboard11combinationplERK11combination"></span><span id="os::keyboard::combination::add-operator__combinationCRC"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ad72c5beb4a4d4b059e68c8ee8462d3f6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="k"><span class="pre">operator</span></span><span class="o"><span class="pre">+</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2os8keyboard11combinationplERK11combination" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Concatinate 2 combinations. </p>
 </dd></dl>
 
@@ -859,7 +767,7 @@ of <a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyb
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard11combination4keysE">
-<span id="_CPPv3N2os8keyboard11combination4keysE"></span><span id="_CPPv2N2os8keyboard11combination4keysE"></span><span id="os::keyboard::combination::keys__std::vector:vk:"></span><span class="target" id="structos_1_1keyboard_1_1combination_1a622d3fc959d75482da830c6a6cc9d2e3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keys</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination4keysE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard11combination4keysE"></span><span id="_CPPv2N2os8keyboard11combination4keysE"></span><span id="os::keyboard::combination::keys__std::vector:vk:"></span><span class="target" id="structos_1_1keyboard_1_1combination_1a622d3fc959d75482da830c6a6cc9d2e3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keys</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination4keysE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Array of virtual keys. </p>
 </dd></dl>
 
@@ -868,31 +776,31 @@ of <a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyb
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard10is_pressedERK11combination">
-<span id="_CPPv3N2os8keyboard10is_pressedERK11combination"></span><span id="_CPPv2N2os8keyboard10is_pressedERK11combination"></span><span id="os::keyboard::is_pressed__combinationCR"></span><span class="target" id="keyboard_8hpp_1aef7694b5c9ee4e0e8aeac5f07bb0d056"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">is_pressed</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard10is_pressedERK11combination" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard10is_pressedERK11combination"></span><span id="_CPPv2N2os8keyboard10is_pressedERK11combination"></span><span id="os::keyboard::is_pressed__combinationCR"></span><span class="target" id="keyboard_8hpp_1aef7694b5c9ee4e0e8aeac5f07bb0d056"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">is_pressed</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard10is_pressedERK11combination" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Check if every key in combination is pressed. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard12pressed_keysEv">
-<span id="_CPPv3N2os8keyboard12pressed_keysEv"></span><span id="_CPPv2N2os8keyboard12pressed_keysEv"></span><span id="os::keyboard::pressed_keys"></span><span class="target" id="keyboard_8hpp_1a35915cfa6beafe279b8362c89dc3897d"></span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pressed_keys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard12pressed_keysEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard12pressed_keysEv"></span><span id="_CPPv2N2os8keyboard12pressed_keysEv"></span><span id="os::keyboard::pressed_keys"></span><span class="target" id="keyboard_8hpp_1a35915cfa6beafe279b8362c89dc3897d"></span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">pressed_keys</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard12pressed_keysEv" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Get combination of all pressed keys on a keyboard. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard5pressERK11combination">
-<span id="_CPPv3N2os8keyboard5pressERK11combination"></span><span id="_CPPv2N2os8keyboard5pressERK11combination"></span><span id="os::keyboard::press__combinationCR"></span><span class="target" id="keyboard_8hpp_1aa6dc4746995f283d7b30d8233881bf99"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">press</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard5pressERK11combination" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard5pressERK11combination"></span><span id="_CPPv2N2os8keyboard5pressERK11combination"></span><span id="os::keyboard::press__combinationCR"></span><span class="target" id="keyboard_8hpp_1aa6dc4746995f283d7b30d8233881bf99"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">press</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard5pressERK11combination" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Press combination of keys (until <a class="reference internal" href="#keyboard_8hpp_1a83ae9e0bfcda91eb6c9baa08805a3b4a"><span class="std std-ref">release()</span></a>) </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard7releaseERK11combination">
-<span id="_CPPv3N2os8keyboard7releaseERK11combination"></span><span id="_CPPv2N2os8keyboard7releaseERK11combination"></span><span id="os::keyboard::release__combinationCR"></span><span class="target" id="keyboard_8hpp_1a83ae9e0bfcda91eb6c9baa08805a3b4a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">release</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard7releaseERK11combination" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard7releaseERK11combination"></span><span id="_CPPv2N2os8keyboard7releaseERK11combination"></span><span id="os::keyboard::release__combinationCR"></span><span class="target" id="keyboard_8hpp_1a83ae9e0bfcda91eb6c9baa08805a3b4a"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">release</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard7releaseERK11combination" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Release combination of keys. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard5clickERK11combination">
-<span id="_CPPv3N2os8keyboard5clickERK11combination"></span><span id="_CPPv2N2os8keyboard5clickERK11combination"></span><span id="os::keyboard::click__combinationCR"></span><span class="target" id="keyboard_8hpp_1a8902141600c6c388054d900883f6017e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">click</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard5clickERK11combination" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N2os8keyboard5clickERK11combination"></span><span id="_CPPv2N2os8keyboard5clickERK11combination"></span><span id="os::keyboard::click__combinationCR"></span><span class="target" id="keyboard_8hpp_1a8902141600c6c388054d900883f6017e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">os</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">keyboard</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">click</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2os8keyboard11combinationE" title="os::keyboard::combination"><span class="n"><span class="pre">combination</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">combo</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2os8keyboard5clickERK11combination" title="Permalink to this definition"></a><br /></dt>
 <dd><p><a class="reference internal" href="#keyboard_8hpp_1aa6dc4746995f283d7b30d8233881bf99"><span class="std std-ref">press()</span></a> and <a class="reference internal" href="#keyboard_8hpp_1a83ae9e0bfcda91eb6c9baa08805a3b4a"><span class="std std-ref">release()</span></a> combination of keys </p>
 </dd></dl>
 
@@ -901,49 +809,32 @@ of <a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyb
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to LibOS’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Gavrilikhin Daniil.
-
-    </p>
+    <p>&#169; Copyright 2021, Gavrilikhin Daniil.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
