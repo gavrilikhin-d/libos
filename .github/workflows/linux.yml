@@ -12,6 +12,9 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install libxtst-dev
 
+    - name: Generate header-only
+      run: python3 header-only.py
+
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/build
 
