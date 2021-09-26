@@ -1,4 +1,4 @@
-// Library information
+// Library information. Header-only
 
 // This file is part of LibOS.
 
@@ -22,8 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-/** @file os/libos.hpp
- *  Library information
+/** @file os/header-only/libos.hpp
+ *  Library information. Header-only
  */
 
 #pragma once

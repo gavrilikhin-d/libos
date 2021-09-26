@@ -1,4 +1,4 @@
-// Library information
+// Macros for OS-specific code. Header-only
 
 // This file is part of LibOS.
 
@@ -22,22 +22,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-/** @file os/libos.hpp
- *  Library information
+/** @file os/header-only/macros.h
+ *  Macros for OS-specific code. Header-only
  */
 
 #pragma once
 
-#include <string_view>
 
-/// LibOS version string macro
-#define LIBOS_VERSION_STRING "0.1.0"
+#if defined(__unix__)
+/// Defined if OS is Unix-like
+#   define OS_UNIX 1
+/// Set to 1 if OS is Unix-like, 0 otherwise
+#   define IS_OS_UNIX 1
+#else
+#   define IS_OS_UNIX 0
+#endif
 
-/// Library information
-namespace libos
-{
+#if defined(__linux__)
+/// Defined if OS is Linux
+#   define OS_LINUX 1
+/// Set to 1 if OS is Linux, 0 otherwise
+#	define IS_OS_LINUX 1
+#else
+#	define IS_OS_LINUX 0
+#endif
 
-/// LibOS version string
-constexpr std::string_view version_string = LIBOS_VERSION_STRING;
-
-} // namespace libos
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+/// Defined if OS is Windows
+#   define OS_WINDOWS 1
+/// Set to 1 if OS is Windows, 0 otherwise
+#	define IS_OS_WINDOWS 1
+#else
+#	define IS_OS_WINDOWS 0
+#endif

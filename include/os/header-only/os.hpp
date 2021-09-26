@@ -1,4 +1,4 @@
-// Header-only library
+// Include all headers. Header-only
 
 // This file is part of LibOS.
 
@@ -23,13 +23,14 @@
 // SOFTWARE.
 
 /** @file os/header-only/os.hpp
- *  Header-only library
+ *  Include all headers. Header-only
  */
 
 #pragma once
 
 // #include "os/macros.h"
-// ======================
+// =========================
+
 #if defined(__unix__)
 /// Defined if OS is Unix-like
 #   define OS_UNIX 1
@@ -56,8 +57,8 @@
 #else
 #	define IS_OS_WINDOWS 0
 #endif
-// ======================
-
+// End of   "os/macros.h"
+// =========================
 
 // #include "os/version.hpp"
 // =========================
@@ -132,6 +133,7 @@ struct version
     /// Check if version is not equal
     constexpr bool operator!=(const version &rhs) const noexcept { return !(*this == rhs); }
 
+
     /// Get version string in format "major.minor.patch"
     std::string str() const
     {
@@ -140,11 +142,15 @@ struct version
                std::to_string(patch);
     }
 };
+// End of   "os/version.hpp"
 // =========================
 
 
 // #include "os/info.hpp"
-// ======================
+// =========================
+#include <string>
+
+
 // Protect from macro collision in std=gnu++17 extension
 #undef linux
 
@@ -229,11 +235,14 @@ struct info_t
 const info_t & info();
 
 } // namespace os
-// ======================
-
+// End of   "os/info.hpp"
+// =========================
 
 // #include "os/kernel.hpp"
-// ========================
+// =========================
+#include <string>
+
+
 namespace os::kernel
 {
 
@@ -274,12 +283,13 @@ struct info_t
 const info_t & info();
 
 } // namespace os::kernel
-// ========================
-
+// End of   "os/kernel.hpp"
+// =========================
 
 // #include "os/keyboard.hpp"
-// ==========================
+// =========================
 #include <vector>
+
 
 namespace os::keyboard
 {
@@ -352,7 +362,7 @@ enum class vk
 //  '/' / '?'
 
     /* Modifiers */
-#if IS_OS_LINUX
+#if OS_LINUX
     Shift_L   = 0xFFE1,
     Shift_R   = 0xFFE2,
     Control_L = 0xFFE3,
@@ -362,7 +372,7 @@ enum class vk
     Alt_R     = 0xFFEA,
     Super_L   = 0xFFEB,
     Super_R   = 0xFFEC,
-#elif IS_OS_WINDOWS
+#elif OS_WINDOWS
     Shift_L   = 0xA0,
     Shift_R   = 0xA1,
     Control_L = 0xA2,
@@ -488,7 +498,25 @@ struct combination
     }
 
     /// Concatinate 2 combinations
-    combination operator+(const combination &combo) const { return combination{*this} += combo; }
+    combination operator+(const combination &combo) const
+    {
+        combination concatenated;
+
+        concatenated.keys.reserve( keys.size() + combo.keys.size() );
+
+        auto resuming_place = std::copy(
+            keys.begin(),
+            keys.end(),
+            concatenated.keys.begin()
+        );
+        std::copy(
+            combo.keys.begin(),
+            combo.keys.end(),
+            resuming_place
+        );
+
+        return concatenated;
+    }
 };
 
 /// Make a combination from 2 virtual keys
@@ -507,14 +535,45 @@ void release(const combination &combo);
 inline void click(const combination &combo) { press(combo); release(combo); }
 
 } // namespace os::keyboard
-// ==========================
 
+// End of   "os/keyboard.hpp"
+// =========================
+
+// #include "os/libos.hpp"
+// =========================
+#include <string_view>
+
+/// LibOS version string macro
+#define LIBOS_VERSION_STRING "0.1.0"
+
+/// Library information
+namespace libos
+{
+
+/// LibOS version string
+constexpr std::string_view version_string = LIBOS_VERSION_STRING;
+
+} // namespace libos
+// End of   "os/libos.hpp"
+// =========================
+
+
+
+// -------------------------
+// |        SOURCES        |
+// -------------------------
 
 #if IS_OS_LINUX
-// linux/info.cpp
-// ==============
+// src/linux/info.cpp
+// =========================
+
+#if !IS_OS_LINUX
+    #error "This code is for Linux only!"
+#endif
+
 #include <fstream>
 
+#include <sys/utsname.h>
 namespace os
 {
 
@@ -584,9 +643,10 @@ const info_t & info()
         }
         else
         {
-            i.name = os::kernel::name();
-            i.version = os::kernel::version();
-            i.version_string = os::kernel::version_string();
+            utsname utsname; uname(&utsname);
+            i.name = "Linux";
+            i.version = ::version{utsname.release};
+            i.version_string = utsname.release;
 
             i.codename = "";
             i.pretty_name = i.name + " " + i.version_string;
@@ -599,11 +659,118 @@ const info_t & info()
 }
 
 } // namespace os
-// ==============
+// End of src/linux/info.cpp
+// =========================
 
+#endif // IS_OS_LINUX
 
-// linux/kernel.cpp
-// ================
+#if IS_OS_WINDOWS
+// src/windows/info.cpp
+// =========================
+
+#if !IS_OS_WINDOWS
+	#error "This code is for Windows only!"
+#endif
+
+namespace os
+{
+
+// Name of OS without version
+std::string name() { return "Windows"; }
+
+// Name of OS + version
+std::string pretty_name() { return info().pretty_name; }
+
+// Codename of OS (if present)
+std::string codename() { return ""; }
+
+// Major, minor and patch of OS
+::version version() { return info().version; }
+
+// Version [+ some additional data]
+std::string version_string() { return info().version_string; }
+
+// Get whole OS info
+const info_t& info()
+{
+    static info_t i;
+
+    // Accessing WMI is expensive.
+    // Init info only once.
+    if (static bool init = true; init)
+    {
+        i.type = type();
+        i.name = name();
+        i.pretty_name = "Windows"; // Will be updated
+        i.codename = codename();
+
+        // KUSER_SHARED_DATA address.
+        // Offsets are taken from http://terminus.rewolf.pl/terminus/structures/ntdll/_KUSER_SHARED_DATA_x64.html
+        constexpr uintptr_t data_adress = uintptr_t{ 0x7ffe0000 };
+        const uint32_t major = *reinterpret_cast<const uint32_t*>(data_adress + 0x26c);
+        const uint32_t minor = *reinterpret_cast<const uint32_t*>(data_adress + 0x270);
+        const uint32_t patch = *reinterpret_cast<const uint32_t*>(data_adress + 0x260);
+
+        i.version = ::version{ major, minor, patch };
+        i.version_string = i.version.str();
+
+        i.pretty_name += " ";
+        if (i.version >= ::version{ 10, 0 })
+        {
+            i.pretty_name += std::to_string(i.version.major);
+        }
+        else if (i.version >= ::version{ 6, 3 })
+        {
+            i.pretty_name += "8.1";
+        }
+        else if (i.version >= ::version{ 6, 2 })
+        {
+            i.pretty_name += "8";
+        }
+        else if (i.version >= ::version{ 6, 1 })
+        {
+            i.pretty_name += "7";
+        }
+        else if (i.version >= ::version{ 6, 0 })
+        {
+            i.pretty_name += "Vista";
+        }
+        else if (i.version >= ::version{ 5, 2 })
+        {
+            i.pretty_name += "XP 64-Bit Edition";
+        }
+        else if (i.version >= ::version{ 5, 1 })
+        {
+            i.pretty_name += "XP";
+        }
+        else if (i.version >= ::version{ 5, 0 })
+        {
+            i.pretty_name += "2000";
+        }
+        else
+        {
+            i.pretty_name.pop_back(); // remove space
+        }
+
+        init = false;
+    }
+
+    return i;
+}
+
+} // namespace os
+// End of src/windows/info.cpp
+// =========================
+
+#endif // IS_OS_WINDOWS
+#if IS_OS_LINUX
+// src/linux/kernel.cpp
+// =========================
+
+#if !IS_OS_LINUX
+    #error "This code is for Linux only!"
+#endif
+
 #include <sys/utsname.h>
 
 namespace os::kernel
@@ -637,11 +804,69 @@ const info_t & info()
 }
 
 } // namespace os::kernel
-// ================
+// End of src/linux/kernel.cpp
+// =========================
 
+#endif // IS_OS_LINUX
 
-// linux/keyboard.cpp
-// ==================
+#if IS_OS_WINDOWS
+// src/windows/kernel.cpp
+// =========================
+
+#if !IS_OS_WINDOWS
+    #error "This code is for Windows only!"
+#endif
+
+namespace os::kernel
+{
+
+// Get name of OS kernel
+std::string name() { return "Windows NT"; }
+
+// Get major, minor and patch of OS kernel
+::version version() { return info().version; }
+
+// Get version [+ additional data] of OS kernel
+std::string version_string() { return info().version_string; }
+
+// Get OS kernel info
+const info_t& info()
+{
+    static info_t i;
+
+    if (static bool init = true; init)
+    {
+        i.name = name();
+
+        // KUSER_SHARED_DATA address.
+        // Offsets are taken from http://terminus.rewolf.pl/terminus/structures/ntdll/_KUSER_SHARED_DATA_x64.html
+        constexpr uintptr_t data_adress = uintptr_t{ 0x7ffe0000 };
+        const uint32_t major = *reinterpret_cast<const uint32_t*>(data_adress + 0x26c);
+        const uint32_t minor = *reinterpret_cast<const uint32_t*>(data_adress + 0x270);
+        const uint32_t patch = *reinterpret_cast<const uint32_t*>(data_adress + 0x260);
+
+        i.version = ::version{ major, minor, patch };
+        i.version_string = i.version.str();
+
+        init = false;
+    }
+
+    return i;
+}
+
+} // namespace os::kernel
+// End of src/windows/kernel.cpp
+// =========================
+
+#endif // IS_OS_WINDOWS
+#if IS_OS_LINUX
+// src/linux/keyboard.cpp
+// =========================
+
+#if !IS_OS_LINUX
+    #error "This code is for Linux only!"
+#endif
+
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/extensions/XTest.h>
@@ -760,294 +985,19 @@ void release(const combination &combo)
 }
 
 } // namespace os::keyboard
-// ==================
+// End of src/linux/keyboard.cpp
+// =========================
+
 #endif // IS_OS_LINUX
 
-
-
 #if IS_OS_WINDOWS
-// windows/info.cpp
-// ================
-/* WMI to get OS info */
-#define _WIN32_DCOM
-#include <comdef.h>
-#include <Wbemidl.h>
-#pragma comment(lib, "wbemuuid.lib")
+// src/windows/keyboard.cpp
+// =========================
 
-namespace os
-{
+#if !IS_OS_WINDOWS
+    #error "This code is for Windows only!"
+#endif
 
-// Name of OS without version
-std::string name() { return "Windows"; }
-
-// Name of OS + version
-std::string pretty_name() { return info().pretty_name; }
-
-// Codename of OS (if present)
-std::string codename() { return ""; }
-
-// Major, minor and patch of OS
-::version version() { return info().version; }
-
-// Version [+ some additional data]
-std::string version_string() { return info().version_string; }
-
-// Get whole OS info
-const info_t& info()
-{
-    static info_t i;
-
-    // Accessing WMI is expensive.
-    // Init info only once.
-    if (static bool init = true; init)
-    {
-        i.type = type();
-        i.name = name();
-        i.pretty_name = "Windows"; // Will be updated
-        i.codename = codename();
-
-        // Accessing WMI like here:
-        // https://docs.microsoft.com/en-us/windows/win32/wmisdk/example--getting-wmi-data-from-the-local-computer
-
-        HRESULT hres;
-
-        // Step 1: --------------------------------------------------
-        // Initialize COM. ------------------------------------------
-
-        hres = CoInitializeEx(0, COINIT_MULTITHREADED);
-        if (FAILED(hres)) { return i; }
-
-        // Step 2: --------------------------------------------------
-        // Set general COM security levels --------------------------
-
-        hres = CoInitializeSecurity(
-            NULL,
-            -1,                          // COM authentication
-            NULL,                        // Authentication services
-            NULL,                        // Reserved
-            RPC_C_AUTHN_LEVEL_DEFAULT,   // Default authentication
-            RPC_C_IMP_LEVEL_IMPERSONATE, // Default Impersonation
-            NULL,                        // Authentication info
-            EOAC_NONE,                   // Additional capabilities
-            NULL                         // Reserved
-        );
-
-
-        if (FAILED(hres))
-        {
-            CoUninitialize();
-            return i;
-        }
-
-        // Step 3: ---------------------------------------------------
-        // Obtain the initial locator to WMI -------------------------
-
-        IWbemLocator* pLoc = NULL;
-
-        hres = CoCreateInstance(
-            CLSID_WbemLocator,
-            0,
-            CLSCTX_INPROC_SERVER,
-            IID_IWbemLocator, (LPVOID*)&pLoc);
-
-        if (FAILED(hres))
-        {
-            CoUninitialize();
-            return i;
-        }
-
-        // Step 4: -----------------------------------------------------
-        // Connect to WMI through the IWbemLocator::ConnectServer method
-
-        IWbemServices* pSvc = NULL;
-
-        // Connect to the root\cimv2 namespace with
-        // the current user and obtain pointer pSvc
-        // to make IWbemServices calls.
-        hres = pLoc->ConnectServer(
-            _bstr_t(L"ROOT\\CIMV2"), // Object path of WMI namespace
-            NULL,                    // User name. NULL = current user
-            NULL,                    // User password. NULL = current
-            NULL,                    // Locale. NULL indicates current
-            NULL,                    // Security flags.
-            0,                       // Authority (for example, Kerberos)
-            0,                       // Context object
-            &pSvc                    // pointer to IWbemServices proxy
-        );
-
-        if (FAILED(hres))
-        {
-            pLoc->Release();
-            CoUninitialize();
-            return i;
-        }
-
-
-        // Step 5: --------------------------------------------------
-        // Set security levels on the proxy -------------------------
-
-        hres = CoSetProxyBlanket(
-            pSvc,                        // Indicates the proxy to set
-            RPC_C_AUTHN_WINNT,           // RPC_C_AUTHN_xxx
-            RPC_C_AUTHZ_NONE,            // RPC_C_AUTHZ_xxx
-            NULL,                        // Server principal name
-            RPC_C_AUTHN_LEVEL_CALL,      // RPC_C_AUTHN_LEVEL_xxx
-            RPC_C_IMP_LEVEL_IMPERSONATE, // RPC_C_IMP_LEVEL_xxx
-            NULL,                        // client identity
-            EOAC_NONE                    // proxy capabilities
-        );
-
-        if (FAILED(hres))
-        {
-            pSvc->Release();
-            pLoc->Release();
-            CoUninitialize();
-            return i;
-        }
-
-        // Step 6: --------------------------------------------------
-        // Use the IWbemServices pointer to make requests of WMI ----
-
-        // For example, get the name of the operating system
-        IEnumWbemClassObject* pEnumerator = NULL;
-        hres = pSvc->ExecQuery(
-            bstr_t("WQL"),
-            bstr_t("SELECT * FROM Win32_OperatingSystem"),
-            WBEM_FLAG_FORWARD_ONLY | WBEM_FLAG_RETURN_IMMEDIATELY,
-            NULL,
-            &pEnumerator);
-
-        if (FAILED(hres))
-        {
-            pSvc->Release();
-            pLoc->Release();
-            CoUninitialize();
-            return i;
-        }
-
-        // Step 7: -------------------------------------------------
-        // Get the data from the query in step 6 -------------------
-
-        IWbemClassObject* pclsObj = NULL;
-        ULONG uReturn = 0;
-
-        while (pEnumerator)
-        {
-            HRESULT hr = pEnumerator->Next(WBEM_INFINITE, 1, &pclsObj, &uReturn);
-
-            if (uReturn == 0) { break; }
-
-            VARIANT vtProp{};
-
-            // Get the value of the Version property
-            hr = pclsObj->Get(L"Version", 0, &vtProp, 0, 0);
-
-            std::wstring v_wstr = vtProp.bstrVal;
-
-            // Digits and points are ANSI symbols, so narrowing conversion from UTF-16 to UTF-8 is fine.
-            std::string v_str(v_wstr.begin(), v_wstr.end());
-
-            i.version = ::version{ v_str };
-            i.version_string = v_str;
-
-            i.pretty_name += " ";
-            if (i.version >= ::version{ 10, 0 })
-            {
-                i.pretty_name += std::to_string(i.version.major);
-            }
-            else if (i.version >= ::version{ 6, 3 })
-            {
-                i.pretty_name += "8.1";
-            }
-            else if (i.version >= ::version{ 6, 2 })
-            {
-                i.pretty_name += "8";
-            }
-            else if (i.version >= ::version{ 6, 1 })
-            {
-                i.pretty_name += "7";
-            }
-            else if (i.version >= ::version{ 6, 0 })
-            {
-                i.pretty_name += "Vista";
-            }
-            else if (i.version >= ::version{ 5, 2 })
-            {
-                i.pretty_name += "XP 64-Bit Edition";
-            }
-            else if (i.version >= ::version{ 5, 1 })
-            {
-                i.pretty_name += "XP";
-            }
-            else if (i.version >= ::version{ 5, 0 })
-            {
-                i.pretty_name += "2000";
-            }
-            else
-            {
-                i.pretty_name.pop_back(); // remove space
-            }
-
-            VariantClear(&vtProp);
-            pclsObj->Release();
-        }
-
-        // Cleanup
-        // ========
-
-        pSvc->Release();
-        pLoc->Release();
-        pEnumerator->Release();
-        CoUninitialize();
-
-        init = false;
-    }
-
-    return i;
-}
-
-} // namespace os
-// ================
-
-
-// windows/kernel.cpp
-// ==================
-namespace os::kernel
-{
-
-// Get name of OS kernel
-std::string name() { return "Windows NT"; }
-
-// Get major, minor and patch of OS kernel
-::version version() { return info().version; }
-
-// Get version [+ additional data] of OS kernel
-std::string version_string() { return info().version_string; }
-
-// Get OS kernel info
-const info_t& info()
-{
-    static info_t i;
-
-    if (static bool init = true; init)
-    {
-        i.name = name();
-        /* Versioning of the Windows kernel is the same as OS */
-        i.version = os::version();
-        i.version_string = os::version_string();
-
-        init = false;
-    }
-
-    return i;
-}
-
-} // namespace os::kernel
-// ==================
-
-
-// windows/keyboard.cpp
-// ====================
 #include <Windows.h>
 
 
@@ -1114,5 +1064,7 @@ namespace os::keyboard
     }
 
 } // namespace os::keyboard
-// ====================
+// End of src/windows/keyboard.cpp
+// =========================
+
 #endif // IS_OS_WINDOWS

@@ -3,8 +3,6 @@ from os import walk
 
 _, _, filenames = next(walk("include/os"), (None, None, []))
 
-ignore = ["libos.hpp", "macros.h", "version.hpp"]
-
 from shutil import copy
 
 import re
@@ -30,8 +28,6 @@ def source_content(path: str) -> str:
     return ''.join(lines_without_user_includes(path))
 
 for filename in filenames:
-    if filename in ignore: continue
-
     ho_path = "include/os/header-only/" + filename
     copy("include/os/" + filename, ho_path)
     with open(ho_path, "r+") as f:
@@ -63,42 +59,46 @@ for filename in filenames:
                  "// =========================\n" \
                  "\n"
 
-        lines.append(
-            "\n"                             \
-            "\n"                             \
-            "// -------------------------\n" \
-            "// |        SOURCES        |\n" \
-            "// -------------------------\n" \
-            "\n"
-        )
 
-        for dependency in dependencies:
-            if dependency in ignore or dependency == "os.hpp": continue
+        # don't have .cpp files
+        ignore = ["os.hpp", "libos.hpp", "macros.h", "version.hpp"]
 
-            src = dependency.removesuffix("pp").removesuffix("h") + "cpp"
-            linux_path = "src/linux/" + src
-            linux_content = source_content(linux_path)
-            windows_path = "src/windows/" + src
-            windows_content = source_content(windows_path)
+        # exclude header-only dependencies
+        dependencies = [d for d in dependencies if d not in ignore]
+        if len(dependencies) > 0:
             lines.append(
-                 "#if IS_OS_LINUX\n"              \
-                f"// {linux_path}\n"              \
-                 "// =========================\n" \
-                f"{linux_content}\n"              \
-                f"// End of {linux_path}\n"       \
-                 "// =========================\n" \
-                 "\n"                             \
-                 "#endif // IS_OS_LINUX\n"        \
-                 "\n"                             \
-                 "#if IS_OS_WINDOWS\n"            \
-                f"// {windows_path}\n"            \
-                 "// =========================\n" \
-                f"{windows_content}\n"            \
-                f"// End of {windows_path}\n"     \
-                 "// =========================\n" \
-                 "\n"                             \
-                 "#endif // IS_OS_WINDOWS\n"
+                "\n"                             \
+                "\n"                             \
+                "// -------------------------\n" \
+                "// |        SOURCES        |\n" \
+                "// -------------------------\n" \
+                "\n"
             )
+            for dependency in dependencies:
+                src = dependency.removesuffix("pp").removesuffix("h") + "cpp"
+                linux_path = "src/linux/" + src
+                linux_content = source_content(linux_path)
+                windows_path = "src/windows/" + src
+                windows_content = source_content(windows_path)
+                lines.append(
+                     "#if IS_OS_LINUX\n"              \
+                    f"// {linux_path}\n"              \
+                     "// =========================\n" \
+                    f"{linux_content}\n"              \
+                    f"// End of {linux_path}\n"       \
+                     "// =========================\n" \
+                     "\n"                             \
+                     "#endif // IS_OS_LINUX\n"        \
+                     "\n"                             \
+                     "#if IS_OS_WINDOWS\n"            \
+                    f"// {windows_path}\n"            \
+                     "// =========================\n" \
+                    f"{windows_content}\n"            \
+                    f"// End of {windows_path}\n"     \
+                     "// =========================\n" \
+                     "\n"                             \
+                     "#endif // IS_OS_WINDOWS\n"
+                )
 
 
         f.seek(0)
