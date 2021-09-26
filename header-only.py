@@ -104,5 +104,3 @@ for filename in filenames:
         f.seek(0)
         f.truncate()
         f.writelines(lines)
-
-print(filenames)
