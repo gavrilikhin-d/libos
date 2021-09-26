@@ -1,4 +1,4 @@
-// Keyboard I/O manipulations. Header-only.
+// Keyboard I/O manipulations. Header-only
 
 // This file is part of LibOS.
 
@@ -23,7 +23,7 @@
 // SOFTWARE.
 
 /** @file os/header-only/keyboard.hpp
- *  Keyboard I/O manipulations. Header-only.
+ *  Keyboard I/O manipulations. Header-only
  */
 
 #pragma once
@@ -31,7 +31,8 @@
 #include <vector>
 
 // #include "os/macros.h"
-// ======================
+// =========================
+
 #if defined(__unix__)
 /// Defined if OS is Unix-like
 #   define OS_UNIX 1
@@ -58,7 +59,9 @@
 #else
 #	define IS_OS_WINDOWS 0
 #endif
-// ======================
+// End of   "os/macros.h"
+// =========================
+
 
 namespace os::keyboard
 {
@@ -267,7 +270,25 @@ struct combination
     }
 
     /// Concatinate 2 combinations
-    combination operator+(const combination &combo) const { return combination{*this} += combo; }
+    combination operator+(const combination &combo) const
+    {
+        combination concatenated;
+
+        concatenated.keys.reserve( keys.size() + combo.keys.size() );
+
+        auto resuming_place = std::copy(
+            keys.begin(),
+            keys.end(),
+            concatenated.keys.begin()
+        );
+        std::copy(
+            combo.keys.begin(),
+            combo.keys.end(),
+            resuming_place
+        );
+
+        return concatenated;
+    }
 };
 
 /// Make a combination from 2 virtual keys
@@ -288,9 +309,18 @@ inline void click(const combination &combo) { press(combo); release(combo); }
 } // namespace os::keyboard
 
 
+// -------------------------
+// |        SOURCES        |
+// -------------------------
+
 #if IS_OS_LINUX
-// linux/keyboard.cpp
-// ==================
+// src/linux/keyboard.cpp
+// =========================
+
+#if !IS_OS_LINUX
+    #error "This code is for Linux only!"
+#endif
+
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
 #include <X11/extensions/XTest.h>
@@ -409,12 +439,19 @@ void release(const combination &combo)
 }
 
 } // namespace os::keyboard
-// ==================
+// End of src/linux/keyboard.cpp
+// =========================
+
 #endif // IS_OS_LINUX
 
 #if IS_OS_WINDOWS
-// windows/keyboard.cpp
-// ====================
+// src/windows/keyboard.cpp
+// =========================
+
+#if !IS_OS_WINDOWS
+    #error "This code is for Windows only!"
+#endif
+
 #include <Windows.h>
 
 
@@ -481,5 +518,7 @@ namespace os::keyboard
     }
 
 } // namespace os::keyboard
-// ====================
+// End of src/windows/keyboard.cpp
+// =========================
+
 #endif // IS_OS_WINDOWS

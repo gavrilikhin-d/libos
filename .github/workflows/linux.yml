@@ -12,6 +12,14 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install libxtst-dev
 
+    - name: Setup python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9.x'
+
+    - name: Generate header-only files
+      run: python header-only.py
+
     - name: Create Build Environment
       run: cmake -E make_directory ${{runner.workspace}}/build
 

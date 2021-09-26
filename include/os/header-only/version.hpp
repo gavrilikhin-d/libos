@@ -1,4 +1,4 @@
-// Functions to get OS Kernel info. Header-only
+// Semantic versioning. Header-only
 
 // This file is part of LibOS.
 
@@ -22,16 +22,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-/** @file os/header-only/kernel.hpp
- *  Functions to get OS Kernel info. Header-only
+/** @file os/header-only/version.hpp
+ *  Semantic versioning. Header-only
  */
 
 #pragma once
 
-#include <string>
-
-// #include "os/version.hpp"
-// =========================
 #include <string>
 #include <string_view>
 
@@ -112,148 +108,3 @@ struct version
                std::to_string(patch);
     }
 };
-// End of   "os/version.hpp"
-// =========================
-
-
-namespace os::kernel
-{
-
-/**
- * @brief Get OS Kernel name
- *
- * @returns
- *  - Linux: `"Linux"`
- *  - Windows: `"Windows NT"`
- */
-std::string name();
-
-/// Get OS Kernel major, minor and patch version as integers
-::version version();
-
-/// Get OS Kernel version as string
-std::string version_string();
-
-/// Full OS Kernel info
-struct info_t
-{
-    /// OS Kernel name
-    std::string name;
-    /// OS Kernel major, minor and patch version as integers
-    ::version   version;
-    /// OS Kernel version as string
-    std::string version_string;
-};
-
-/**
- * @brief Get full OS Kernel info
- * @details
- *  Obtaining OS Kernel info is very expensive.
- *  Hence, it's statically allocated and read exactly once.
- *
- * @return const info_t& Ref to OS Kernel info
- */
-const info_t & info();
-
-} // namespace os::kernel
-
-// -------------------------
-// |        SOURCES        |
-// -------------------------
-
-#if IS_OS_LINUX
-// src/linux/kernel.cpp
-// =========================
-
-#if !IS_OS_LINUX
-    #error "This code is for Linux only!"
-#endif
-
-#include <sys/utsname.h>
-
-namespace os::kernel
-{
-
-// Get name of OS kernel
-std::string name() { return "Linux"; }
-
-// Get major, minor and patch of OS kernel
-::version version() { return info().version; }
-
-// Get version [+ additional data] of OS kernel
-std::string version_string() { return info().version_string; }
-
-// Get OS kernel info
-const info_t & info()
-{
-    static info_t i;
-
-    if (static bool init = true; init)
-    {
-        utsname utsname; uname(&utsname);
-        i.name = os::kernel::name();
-        i.version = ::version{utsname.release};
-        i.version_string = utsname.release;
-
-        init = false;
-    }
-
-    return i;
-}
-
-} // namespace os::kernel
-// End of src/linux/kernel.cpp
-// =========================
-
-#endif // IS_OS_LINUX
-
-#if IS_OS_WINDOWS
-// src/windows/kernel.cpp
-// =========================
-
-#if !IS_OS_WINDOWS
-    #error "This code is for Windows only!"
-#endif
-
-namespace os::kernel
-{
-
-// Get name of OS kernel
-std::string name() { return "Windows NT"; }
-
-// Get major, minor and patch of OS kernel
-::version version() { return info().version; }
-
-// Get version [+ additional data] of OS kernel
-std::string version_string() { return info().version_string; }
-
-// Get OS kernel info
-const info_t& info()
-{
-    static info_t i;
-
-    if (static bool init = true; init)
-    {
-        i.name = name();
-
-        // KUSER_SHARED_DATA address.
-        // Offsets are taken from http://terminus.rewolf.pl/terminus/structures/ntdll/_KUSER_SHARED_DATA_x64.html
-        constexpr uintptr_t data_adress = uintptr_t{ 0x7ffe0000 };
-        const uint32_t major = *reinterpret_cast<const uint32_t*>(data_adress + 0x26c);
-        const uint32_t minor = *reinterpret_cast<const uint32_t*>(data_adress + 0x270);
-        const uint32_t patch = *reinterpret_cast<const uint32_t*>(data_adress + 0x260);
-
-        i.version = ::version{ major, minor, patch };
-        i.version_string = i.version.str();
-
-        init = false;
-    }
-
-    return i;
-}
-
-} // namespace os::kernel
-// End of src/windows/kernel.cpp
-// =========================
-
-#endif // IS_OS_WINDOWS

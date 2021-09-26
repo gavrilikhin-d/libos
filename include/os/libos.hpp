@@ -30,8 +30,6 @@
 
 #include <string_view>
 
-#include "os/version.hpp"
-
 /// LibOS version string macro
 #define LIBOS_VERSION_STRING "0.1.0"
 
@@ -41,7 +39,5 @@ namespace libos
 
 /// LibOS version string
 constexpr std::string_view version_string = LIBOS_VERSION_STRING;
-/// LibOS version struct
-constexpr ::version version = ::version{LIBOS_VERSION_STRING};
 
 } // namespace libos
