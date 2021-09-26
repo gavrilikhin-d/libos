@@ -8,7 +8,7 @@ from shutil import copy
 import re
 
 # Remove #include "..." lines
-def lines_without_user_includes(path: str) -> list[str]:
+def lines_without_user_includes(path: str):
     with open(path) as f:
         lines = f.readlines()
         remove_indexes = []
