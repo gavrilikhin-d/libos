@@ -52,13 +52,6 @@ endif()
 # Specify directories which the compiler should look for headers
 target_include_directories(os PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
-# IDEs should put the headers in a nice place
-source_group(
-    TREE "${PROJECT_SOURCE_DIR}/include"
-    PREFIX "Header Files"
-    FILES ${HEADER_LIST}
-)
-
 # install library itself
 install(TARGETS os LIBRARY DESTINATION lib)
 

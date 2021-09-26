@@ -1,6 +1,6 @@
 name: Docs
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -26,21 +26,36 @@ jobs:
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
-
+        
     - name: Create artifact
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: DocumentationHTML
         path: docs/build/html/
 
-    # Publish built docs to gh-pages branch.
-    # ===============================
-    - name: Commit changes
-      run: |
+  # Publish built docs to gh-pages branch.
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    # Runs if push to master
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    
+    steps:
+    - name: Clone gh-pages
+      run: | 
         git clone https://github.com/gavrilikhin-d/libos --branch gh-pages --single-branch gh-pages
-        cp -r docs/build/html/* gh-pages/
         cd gh-pages
         touch .nojekyll
+    
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: DocumentationHTML
+        path: gh-pages
+    
+    - name: Commit changes
+      working-directory: gh-pages
+      run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
@@ -53,4 +68,3 @@ jobs:
         branch: gh-pages
         directory: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
-    # ===============================

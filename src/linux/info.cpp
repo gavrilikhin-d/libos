@@ -7,8 +7,7 @@
 
 #include <fstream>
 
-#include "os/kernel.hpp"
-
+#include <sys/utsname.h>
 namespace os
 {
 
@@ -78,9 +77,10 @@ const info_t & info()
         }
         else
         {
-            i.name = os::kernel::name();
-            i.version = os::kernel::version();
-            i.version_string = os::kernel::version_string();
+            utsname utsname; uname(&utsname);
+            i.name = "Linux";
+            i.version = ::version{utsname.release};
+            i.version_string = utsname.release;
 
             i.codename = "";
             i.pretty_name = i.name + " " + i.version_string;
