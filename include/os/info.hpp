@@ -45,7 +45,8 @@ enum type_t
 	undefined,
 
 	linux,
-	windows
+	windows,
+    macos
 };
 
 /// Get type of OS at compile time
@@ -55,6 +56,8 @@ constexpr type_t type() noexcept
     return os::linux;
 #elif IS_OS_WINDOWS
     return os::windows;
+#elif IS_OS_MACOS
+    return os::macos;
 #else
     return os::undefined;
 #endif
@@ -67,6 +70,7 @@ constexpr type_t type() noexcept
  *  - Linux:
  *      - Distributive's name (e.g. `"Ubuntu"`)
  *      - `"Linux"`, if `/etc/os-release` not found
+ *  - MacOS: `"macOS"`
  *  - Windows: `"Windows"`
  */
 std::string name();
@@ -79,6 +83,7 @@ std::string pretty_name();
  *
  * @returns
  *  - Linux: codename, if present
+ *  - MacOS: codename
  *  - Windows: `""`
  */
 std::string codename();

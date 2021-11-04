@@ -103,7 +103,7 @@ enum class vk
 //  '/' / '?'
 
     /* Modifiers */
-#if OS_LINUX
+#if IS_OS_LINUX
     Shift_L   = 0xFFE1,
     Shift_R   = 0xFFE2,
     Control_L = 0xFFE3,
@@ -113,7 +113,7 @@ enum class vk
     Alt_R     = 0xFFEA,
     Super_L   = 0xFFEB,
     Super_R   = 0xFFEC,
-#elif OS_WINDOWS
+#elif IS_OS_WINDOWS
     Shift_L   = 0xA0,
     Shift_R   = 0xA1,
     Control_L = 0xA2,
@@ -123,6 +123,7 @@ enum class vk
     Alt_R     = 0xA5,
     Super_L   = 0x5B,
     Super_R   = 0x5C,
+#elif IS_OS_MACOS
 #endif
     Shift = Shift_L,
     Control = Control_L, Ctrl = Control_L,
@@ -143,6 +144,7 @@ enum class vk
     Return    = '\r',
     Escape    = 0x1B,
     Delete    = 0x2E,
+#elif IS_OS_MACOS
 #endif
     Enter = Return,
     Esc = Escape,
@@ -175,6 +177,7 @@ enum class vk
     F10 = 0x79,
     F11 = 0x7A,
     F12 = 0x7B,
+#elif IS_OS_MACOS
 #endif
 
     /* Arrows */
@@ -188,6 +191,7 @@ enum class vk
     Up    = 0x26,
     Right = 0x27,
     Down  = 0x28,
+#elif IS_OS_MACOS
 #endif
 
     /* Numpad */
@@ -213,6 +217,7 @@ enum class vk
     num_7 = 0x67,
     num_8 = 0x68,
     num_9 = 0x69
+#elif IS_OS_MACOS
 #endif
 
 // TODO: more numpad keys
