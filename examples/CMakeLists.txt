@@ -16,8 +16,8 @@ macro(add_example _NAME)
     endif()
 endmacro()
 
-add_example(keyboard)
+# add_example(keyboard)
 add_example(os_and_kernel_info)
 
 # Add header-only library test
-add_example(header-only)
+# add_example(header-only)

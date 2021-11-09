@@ -19,6 +19,7 @@ int main()
     std::cout << "OS type: ";
     if constexpr (os::type() == os::linux) { std::cout << "linux";     }
     else if (os::type() == os::windows)    { std::cout << "windows";   }
+    else if (os::type() == os::macos)      { std::cout << "macos";     }
     else if (os::type() == os::undefined)  { std::cout << "undefined"; }
     std::cout << "\n";
 

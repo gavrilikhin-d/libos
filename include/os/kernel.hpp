@@ -40,7 +40,7 @@ namespace os::kernel
  *
  * @returns
  *  - Linux: `"Linux"`
- *  - MacOS: `"XNU"`
+ *  - MacOS: `"Darwin"`
  *  - Windows: `"Windows NT"`
  */
 std::string name();
