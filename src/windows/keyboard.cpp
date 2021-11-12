@@ -46,7 +46,7 @@ namespace os::keyboard
         for (size_t i = 0; i < combo.keys.size(); ++i)
         {
             auto& in = inputs[i];
-            const auto& key = combo.keys[i];
+            const auto& key = combo.keys[static_cast<vk>(i)];
 
             in.type = INPUT_KEYBOARD;
             in.ki.wVk = static_cast<int>(key);
@@ -61,7 +61,7 @@ namespace os::keyboard
         for (size_t i = 0; i < combo.keys.size(); ++i)
         {
             auto& in = inputs[i];
-            const auto& key = combo.keys[i];
+            const auto& key = combo.keys[static_cast<vk>(i)];
 
             in.type = INPUT_KEYBOARD;
             in.ki.wVk = static_cast<int>(key);
