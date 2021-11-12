@@ -9,7 +9,7 @@
 
 namespace os::detail
 {
-    void send_inputs(const keyboard::combination &combo, int flag)
+    void send_inputs(const keyboard::combination &combo, bool is_down)
     {
         std::vector<INPUT> inputs(combo.keys.size());
         size_t i = 0;
@@ -19,7 +19,10 @@ namespace os::detail
 
             in.type = INPUT_KEYBOARD;
             in.ki.wVk = static_cast<int>(key);
-            in.ki.dwFlags = flag;
+            if (!is_down) 
+            {
+                in.ki.dwFlags = KEYEVENTF_KEYUP;
+            }
 
             i++;
         }
@@ -59,9 +62,9 @@ namespace os::keyboard
     }
 
     // Press combination of keys (until release)
-    void press(const combination& combo) { detail::send_inputs(combo, KEYEVENTF_KEYDOWN); }
+    void press(const combination& combo) { detail::send_inputs(combo, true); }
 
     // Release combination of keys
-    void release(const combination& combo) { detail::send_inputs(combo, KEYEVENTF_KEYUP); }
+    void release(const combination& combo) { detail::send_inputs(combo, false); }
 
 } // namespace os::keyboard
