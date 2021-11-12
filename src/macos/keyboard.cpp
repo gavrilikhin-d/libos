@@ -16,21 +16,26 @@ CGEventFlags extract_modifiers(os::keyboard::combination &combo)
 
     CGEventFlags flags = 0;
 
-    auto try_extract = [&flags, &combo](vk m1, vk m2, CGEventFlags mask)
+    auto try_extract = [&flags, &combo](vk modifier, CGEventFlags mask)
     {
-        if (combo.keys.contains(m1) || combo.keys.contains(m2))
+        auto it = combo.keys.find(modifier); 
+        if (it != combo.keys.end())
         {
             flags |= mask;
-            combo.keys.erase(m1);
-            combo.keys.erase(m2);
+            combo.keys.erase(it);
         }
     };
-    try_extract(vk::Shift_L, vk::Shift_R, kCGEventFlagMaskShift);
-    try_extract(vk::Option_L, vk::Option_R, kCGEventFlagMaskAlternate);
-    try_extract(vk::Command_L, vk::Command_R, kCGEventFlagMaskCommand);
-    try_extract(vk::Control_L, vk::Control_R, kCGEventFlagMaskControl);
-    // Doesn't have right equivalent
-    try_extract(vk::Function, vk::Function, kCGEventFlagMaskSecondaryFn);
+    
+    try_extract(vk::Function, kCGEventFlagMaskSecondaryFn);
+
+    try_extract(vk::Shift_L, kCGEventFlagMaskShift);
+    try_extract(vk::Shift_R, kCGEventFlagMaskShift);
+    try_extract(vk::Option_L, kCGEventFlagMaskAlternate);
+    try_extract(vk::Option_R, kCGEventFlagMaskAlternate);
+    try_extract(vk::Command_L, kCGEventFlagMaskCommand);
+    try_extract(vk::Command_R, kCGEventFlagMaskCommand);
+    try_extract(vk::Control_L, kCGEventFlagMaskControl);
+    try_extract(vk::Control_R, kCGEventFlagMaskControl);
 
     return flags;
 }

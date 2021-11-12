@@ -44,6 +44,7 @@ const info_t & info()
             false // not a directory
         );
         CFReadStreamRef stream = CFReadStreamCreateWithFile(kCFAllocatorDefault, fileURL);
+        CFRelease(fileURL);
         if (CFReadStreamOpen(stream))
         {
             constexpr CFIndex bufferLength = 1024;
@@ -62,22 +63,24 @@ const info_t & info()
                     nullptr, 
                     nullptr
                 );
+                CFRelease(data);
 
                 CFDictionaryRef dict = static_cast<CFDictionaryRef>(plist);
                 CFStringRef productVersion = static_cast<CFStringRef>(CFDictionaryGetValue(dict, CFSTR("ProductVersion")));
                 CFStringRef productBuildVersion = static_cast<CFStringRef>(CFDictionaryGetValue(dict, CFSTR("ProductBuildVersion")));
 
-                std::string version(CFStringGetCStringPtr(productVersion, kCFStringEncodingUTF8));
-                std::string build(CFStringGetCStringPtr(productBuildVersion, kCFStringEncodingUTF8));
+                std::string version(CFStringGetLength(productVersion), 'x');
+                CFStringGetCString(productVersion, version.data(), version.size() + 1, kCFStringEncodingUTF8);
+
+                std::string build(CFStringGetLength(productBuildVersion), 'x');
+                CFStringGetCString(productBuildVersion, build.data(), build.size() + 1, kCFStringEncodingUTF8);
+
+                CFRelease(plist);
                 
                 i.version = ::version(version);
                 i.version_string = version + " (" + build + ")";
-
-                CFRelease(data);
-                CFRelease(plist);
             }
         }
-        CFRelease(fileURL);
         CFRelease(stream);
 
         if (i.version.major == 12)

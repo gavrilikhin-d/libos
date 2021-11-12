@@ -51,12 +51,10 @@ add_library(os ${os_sources} ${os_headers})
 target_compile_features(os PUBLIC cxx_std_17)
 
 if (APPLE)
-    find_library(CF CoreFoundation)
-    if (NOT CF)
-        message(FATAL_ERROR "CoreFoundation not found")
-    endif()
+    find_library(CoreFoundation CoreFoundation REQUIRED)
+    find_library(CoreGraphics CoreGraphics REQUIRED)
 
-    target_link_libraries(os ${CF})
+    target_link_libraries(os ${CoreFoundation} ${CoreGraphics})
 elseif (UNIX)
     find_package( X11 REQUIRED )
 
