@@ -31,7 +31,7 @@
 #include <string_view>
 
 /// LibOS version string macro
-#define LIBOS_VERSION_STRING "0.1.0"
+#define LIBOS_VERSION_STRING "0.2.0"
 
 /// Library information
 namespace libos

@@ -14,7 +14,15 @@ set(
         ${PROJECT_SOURCE_DIR}/include/os/version.hpp
 )
 
-if (UNIX)
+if (APPLE)
+    # Add macOS sources
+    set(
+        os_sources
+            macos/info.cpp
+            macos/kernel.cpp
+            macos/keyboard.cpp
+    )
+elseif (UNIX)
     # Add linux sources
     set(
         os_sources
@@ -42,7 +50,14 @@ add_library(os ${os_sources} ${os_headers})
 # Requires at least C++17
 target_compile_features(os PUBLIC cxx_std_17)
 
-if (UNIX)
+if (APPLE)
+    find_library(CoreFoundation CoreFoundation REQUIRED)
+    find_library(CoreGraphics CoreGraphics REQUIRED)
+    find_library(Carbon Carbon REQUIRED)
+    find_library(IOKit IOKit REQUIRED)
+
+    target_link_libraries(os ${CoreFoundation} ${CoreGraphics} ${Carbon} ${IOKit})
+elseif (UNIX)
     find_package( X11 REQUIRED )
 
     # Library to manipulate GUI on linux

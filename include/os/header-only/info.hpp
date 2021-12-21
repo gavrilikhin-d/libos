@@ -33,7 +33,7 @@
 // #include "os/macros.h"
 // =========================
 
-#if defined(__unix__)
+#if defined(__unix__) || defined(__linux__) || defined(__APPLE__)
 /// Defined if OS is Unix-like
 #   define OS_UNIX 1
 /// Set to 1 if OS is Unix-like, 0 otherwise
@@ -58,6 +58,15 @@
 #	define IS_OS_WINDOWS 1
 #else
 #	define IS_OS_WINDOWS 0
+#endif
+
+#if defined(__APPLE__) && defined(__MACH__)
+/// Defined if OS is MacOS
+#   define OS_MACOS 1
+/// Set to 1 if OS is MacOS, 0 otherwise
+#   define IS_OS_MACOS 1
+#else
+#   define IS_OS_MACOS 0
 #endif
 // End of   "os/macros.h"
 // =========================
@@ -160,7 +169,8 @@ enum type_t
 	undefined,
 
 	linux,
-	windows
+	windows,
+    macos
 };
 
 /// Get type of OS at compile time
@@ -170,6 +180,8 @@ constexpr type_t type() noexcept
     return os::linux;
 #elif IS_OS_WINDOWS
     return os::windows;
+#elif IS_OS_MACOS
+    return os::macos;
 #else
     return os::undefined;
 #endif
@@ -182,6 +194,7 @@ constexpr type_t type() noexcept
  *  - Linux:
  *      - Distributive's name (e.g. `"Ubuntu"`)
  *      - `"Linux"`, if `/etc/os-release` not found
+ *  - MacOS: `"macOS"`
  *  - Windows: `"Windows"`
  */
 std::string name();
@@ -194,6 +207,7 @@ std::string pretty_name();
  *
  * @returns
  *  - Linux: codename, if present
+ *  - MacOS: codename
  *  - Windows: `""`
  */
 std::string codename();
