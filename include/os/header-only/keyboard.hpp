@@ -569,6 +569,28 @@ void release(const combination &combo)
 
 #include <Windows.h>
 
+namespace os::detail
+{
+    void send_inputs(const keyboard::combination &combo, bool is_down)
+    {
+        std::vector<INPUT> inputs(combo.keys.size());
+        size_t i = 0;
+        for (auto key : combo.keys)
+        {
+            auto& in = inputs[i];
+
+            in.type = INPUT_KEYBOARD;
+            in.ki.wVk = static_cast<int>(key);
+            if (!is_down) 
+            {
+                in.ki.dwFlags = KEYEVENTF_KEYUP;
+            }
+
+            i++;
+        }
+        SendInput(inputs.size(), inputs.data(), sizeof(INPUT));
+    }
+}
 
 namespace os::keyboard
 {
@@ -602,35 +624,10 @@ namespace os::keyboard
     }
 
     // Press combination of keys (until release)
-    void press(const combination& combo)
-    {
-        std::vector<INPUT> inputs(combo.keys.size());
-        for (size_t i = 0; i < combo.keys.size(); ++i)
-        {
-            auto& in = inputs[i];
-            const auto& key = combo.keys[i];
-
-            in.type = INPUT_KEYBOARD;
-            in.ki.wVk = static_cast<int>(key);
-        }
-        SendInput(inputs.size(), inputs.data(), sizeof(INPUT));
-    }
+    void press(const combination& combo) { detail::send_inputs(combo, true); }
 
     // Release combination of keys
-    void release(const combination& combo)
-    {
-        std::vector<INPUT> inputs(combo.keys.size());
-        for (size_t i = 0; i < combo.keys.size(); ++i)
-        {
-            auto& in = inputs[i];
-            const auto& key = combo.keys[i];
-
-            in.type = INPUT_KEYBOARD;
-            in.ki.wVk = static_cast<int>(key);
-            in.ki.dwFlags = KEYEVENTF_KEYUP;
-        }
-        SendInput(inputs.size(), inputs.data(), sizeof(INPUT));
-    }
+    void release(const combination& combo) { detail::send_inputs(combo, false); }
 
 } // namespace os::keyboard
 // End of src/windows/keyboard.cpp

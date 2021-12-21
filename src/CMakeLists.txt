@@ -53,8 +53,10 @@ target_compile_features(os PUBLIC cxx_std_17)
 if (APPLE)
     find_library(CoreFoundation CoreFoundation REQUIRED)
     find_library(CoreGraphics CoreGraphics REQUIRED)
+    find_library(Carbon Carbon REQUIRED)
+    find_library(IOKit IOKit REQUIRED)
 
-    target_link_libraries(os ${CoreFoundation} ${CoreGraphics})
+    target_link_libraries(os ${CoreFoundation} ${CoreGraphics} ${Carbon} ${IOKit})
 elseif (UNIX)
     find_package( X11 REQUIRED )
 
