@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Reference &mdash; LibOS 0.1.0 documentation</title>
+  <title>API Reference &mdash; LibOS 0.2.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -270,6 +270,11 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <span id="_CPPv3N2os6type_t7windowsE"></span><span id="_CPPv2N2os6type_t7windowsE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41a47e111c553e279e2fc797b346512e8af"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">windows</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t7windowsE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N2os6type_t5macosE">
+<span id="_CPPv3N2os6type_t5macosE"></span><span id="_CPPv2N2os6type_t5macosE"></span><span class="target" id="info_8hpp_1aa5a505559c0d0c92c413311a10628c41aeec4888c08faca9d5a931d9d9ea874aa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">macos</span></span></span><a class="headerlink" href="#_CPPv4N2os6type_t5macosE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="cpp function">
@@ -297,6 +302,7 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <li><p><code class="docutils literal notranslate"><span class="pre">&quot;Linux&quot;</span></code>, if <code class="docutils literal notranslate"><span class="pre">/etc/os-release</span></code> not found</p></li>
 </ul>
 </p></li>
+<li><p>MacOS: <code class="docutils literal notranslate"><span class="pre">&quot;macOS&quot;</span></code></p></li>
 <li><p>Windows: <code class="docutils literal notranslate"><span class="pre">&quot;Windows&quot;</span></code> </p></li>
 </ul>
 </p>
@@ -318,6 +324,7 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p>Linux: codename, if present</p></li>
+<li><p>MacOS: codename</p></li>
 <li><p>Windows: <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> </p></li>
 </ul>
 </p>
@@ -405,6 +412,7 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><ul class="simple">
 <li><p>Linux: <code class="docutils literal notranslate"><span class="pre">&quot;Linux&quot;</span></code></p></li>
+<li><p>MacOS: <code class="docutils literal notranslate"><span class="pre">&quot;Darwin&quot;</span></code></p></li>
 <li><p>Windows: <code class="docutils literal notranslate"><span class="pre">&quot;Windows</span> <span class="pre">NT&quot;</span></code> </p></li>
 </ul>
 </p>
@@ -657,11 +665,6 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5SpaceE">
-<span id="_CPPv3N2os8keyboard2vk5SpaceE"></span><span id="_CPPv2N2os8keyboard2vk5SpaceE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dad511f8439ecde36647437fbba67a4394"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Space</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5SpaceE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5ShiftE">
 <span id="_CPPv3N2os8keyboard2vk5ShiftE"></span><span id="_CPPv2N2os8keyboard2vk5ShiftE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da825a3d98017bab11815ad2817201324c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Shift</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5ShiftE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
@@ -679,31 +682,6 @@ you may want to use <a class="reference internal" href="#_CPPv4N2os4typeEv" titl
 <dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk4CapsE">
 <span id="_CPPv3N2os8keyboard2vk4CapsE"></span><span id="_CPPv2N2os8keyboard2vk4CapsE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da55dd587cdc4a278be6a5c37f9e539de1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Caps</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk4CapsE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3AltE">
-<span id="_CPPv3N2os8keyboard2vk3AltE"></span><span id="_CPPv2N2os8keyboard2vk3AltE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daa2e92861b757ab878312dd57993d60cf"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Alt</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3AltE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk5SuperE">
-<span id="_CPPv3N2os8keyboard2vk5SuperE"></span><span id="_CPPv2N2os8keyboard2vk5SuperE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da0ce3266d4eb71ad50f7a90aee6d21dcd"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Super</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk5SuperE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3WinE">
-<span id="_CPPv3N2os8keyboard2vk3WinE"></span><span id="_CPPv2N2os8keyboard2vk3WinE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0da119eac47719cc9be7b99124712e229da"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Win</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3WinE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk7CommandE">
-<span id="_CPPv3N2os8keyboard2vk7CommandE"></span><span id="_CPPv2N2os8keyboard2vk7CommandE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0daee97be03cb04119af45014d815621ce1"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Command</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk7CommandE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard2vk3CmdE">
-<span id="_CPPv3N2os8keyboard2vk3CmdE"></span><span id="_CPPv2N2os8keyboard2vk3CmdE"></span><span class="target" id="keyboard_8hpp_1a5b3f9a5dd66bc3a0e34eb81e14257d0dab5272fc6223db73c6f142bfa552c70f8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Cmd</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard2vk3CmdE" title="Permalink to this definition"></a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp enumerator">
@@ -767,7 +745,7 @@ of <a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyb
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N2os8keyboard11combination4keysE">
-<span id="_CPPv3N2os8keyboard11combination4keysE"></span><span id="_CPPv2N2os8keyboard11combination4keysE"></span><span id="os::keyboard::combination::keys__std::vector:vk:"></span><span class="target" id="structos_1_1keyboard_1_1combination_1a622d3fc959d75482da830c6a6cc9d2e3"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keys</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination4keysE" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv3N2os8keyboard11combination4keysE"></span><span id="_CPPv2N2os8keyboard11combination4keysE"></span><span id="os::keyboard::combination::keys__std::unordered_set:vk:"></span><span class="target" id="structos_1_1keyboard_1_1combination_1ac447bec3b0488612c0839a6c451ceea4"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="#_CPPv4N2os8keyboard2vkE" title="os::keyboard::vk"><span class="n"><span class="pre">vk</span></span></a><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">keys</span></span></span><a class="headerlink" href="#_CPPv4N2os8keyboard11combination4keysE" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Array of virtual keys. </p>
 </dd></dl>
 
