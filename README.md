@@ -1,5 +1,6 @@
 # LibOS
 [![Linux](https://github.com/gavrilikhin-d/libos/actions/workflows/linux.yml/badge.svg)](https://github.com/gavrilikhin-d/libos/actions/workflows/linux.yml)
+[![macOS](https://github.com/gavrilikhin-d/libos/actions/workflows/macos.yml/badge.svg)](https://github.com/gavrilikhin-d/libos/actions/workflows/macos.yml)
 [![Windows](https://github.com/gavrilikhin-d/libos/actions/workflows/windows.yml/badge.svg)](https://github.com/gavrilikhin-d/libos/actions/workflows/windows.yml)
 [![Documentation](https://img.shields.io/badge/docs-online-informational?label=Docs&style=flat&link=https://gavrilikhin-d.github.io/libos/)](https://gavrilikhin-d.github.io/libos/)
 [![License](https://img.shields.io/github/license/gavrilikhin-d/libos?label=License)](https://github.com/gavrilikhin-d/libos/blob/master/LICENSE)
